@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title> 6.	Задачи о нахождении дерева кратчайших путей из заданного узла s</title>
+	<meta http-equiv="Content-Language" content="ru" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="../../../Теория/css/textStyle.css">
+</head>
+<body>
+	<div title="top" class="div-p-top">
+		<h1 class="Top">
+			<a href="../pr5/pr5.htm">[предыдущая тема]</a>
+			<a href="../../practice.htm">[оглавление]</a>
+			<a href="../pr7/pr7.htm">[следующая тема]</a>
+		</h1>
+		<hr>
+		<p>&nbsp;</p>
+		<h1> 6.	Задачи о нахождении дерева кратчайших путей из заданного узла s</h1>
+		<p>&nbsp;</p>
+		<hr>
+		<p>&nbsp;</p>
+	</div>
+	<div align="justify" style="margin-left: 20px;">
+	<p><b>Пример 1.</b>
+	<br><br>На сети, изображенной на <a href="#p6.1">рис. 6.1</a>, </p>
+
+<p align="center"><a name="p6.1"><img src="../../images/pr6/58.jpg"></a></p>
+
+	<p align="center">рис. 6.1.</p>
+
+
+
+
+
+
+
+
+
+
+<p>найти кратчайший путь из узла <i>s=1</i> в узел <i>t=4</i>.Воспользуемся алгоритмом Дейкстры.</p>
+	<p>Перед началом работы алгоритма  полагаем</p>
+	<p align="center"><img src="../../images/pr6/1.jpg"></p>
+<br><br>
+	<p>
+<br>
+		<b>Итерация 1.</b> Рассмотрим узлы
+	</p>
+
+	<br><p align="center"><img src="../../images/pr6/2.jpg"></p>
+<br>
+	<p>Поскольку <img src="../../images/pr6/3.jpg"> то меняем временные метки узлов <img src="../../images/pr6/4.jpg"></p>
+	<br><p align="center"><img src="../../images/pr6/5.jpg"></p><br>
+
+	<p>Временные метки остальных узлов не  меняем:</p>
+	<br><p align="center"><img src="../../images/pr6/6.jpg"></p><br>
+	<p>Среди всех узлов <img src="../../images/pr6/7.jpg"> (т.е. узлов с временными метками) находим узел <img src="../../images/pr6/8.jpg"> с минимальной временной меткой:</p>
+	<br><p align="center"><img src="../../images/pr6/9.jpg"></p><br>
+
+	<p>Полагаем <img src="../../images/pr6/10.jpg"> т.е. узлу <img src="../../images/pr6/11.jpg"> приписываем постоянные метки  и относим узел <img src="../../images/pr6/8.jpg"> к множеству <img src="../../images/pr6/12.jpg">, заменяя <img src="../../images/pr6/12.jpg"> на <img src="../../images/pr6/13.jpg"></p>
+	<p>Полагаем <img src="../../images/pr6/14.jpg"> и переходим к следующей итерации.</p>
+<br><br>
+	<p>
+		<b>Итерация 2.</b> Рассмотрим узлы
+	</p>
+	<br><p align="center"><img src="../../images/pr6/15.jpg"></p><br>
+	<p>Поскольку для узлов <img src="../../images/pr6/16.jpg"> имеем</p>
+	<br><p align="center"><img src="../../images/pr6/17.jpg"></p><br>
+
+	<p>то меняем временные метки этих  узлов:</p>
+	<br><p align="center"><img src="../../images/pr6/18.jpg"></p><br>
+	<p>Временные метки остальных узлов не меняем.</p>
+	<p>Среди всех узлов <img src="../../images/pr6/7.jpg"> (т.е. узлов с временными метками) находим узел <img src="../../images/pr6/8.jpg">. Это узел <img src="../../images/pr6/19.jpg"> Полагаем</p>
+	<br><p align="center"><img src="../../images/pr6/20.jpg"></p><br>
+	<p>т.е. узлу <img src="../../images/pr6/19.jpg"> приписываем постоянные метки  и относим узел <img src="../../images/pr6/8.jpg"> к множеству <img src="../../images/pr6/12.jpg">, заменяя <img src="../../images/pr6/12.jpg"> на <img src="../../images/pr6/21.jpg"></p>
+	<p>Полагаем <img src="../../images/pr6/22.jpg"> и переходим к следующей итерации.</p>
+<br><br>
+	<p>
+		<b>Итерация 3.</b> Рассмотрим узлы
+	</p>
+	<br><p align="center"><img src="../../images/pr6/23.jpg"></p><br>
+	<p>Поскольку для узлов <img src="../../images/pr6/24.jpg"> имеем</p>
+	<br><p align="center"><img src="../../images/pr6/25.jpg"></p><br>
+
+	<p>то меняем временные метки этих  узлов:</p>
+	<br><p align="center"><img src="../../images/pr6/26.jpg"></p><br>
+	<p>Временные метки остальных узлов не меняем.</p>
+	<p>Среди всех узлов <img src="../../images/pr6/7.jpg"> (т.е. узлов с временными метками) находим узел <img src="../../images/pr6/8.jpg">. Это узел <img src="../../images/pr6/27.jpg"> Полагаем
+	<img src="../../images/pr6/28.jpg"> и относим узел <img src="../../images/pr6/27.jpg"> к множеству <img src="../../images/pr6/12.jpg">, заменяя <img src="../../images/pr6/12.jpg"> на <img src="../../images/pr6/29.jpg"></p>
+	<p>Полагаем <img src="../../images/pr6/30.jpg"> и переходим к следующей итерации.</p>
+<br><br>
+	<p>
+		<b>Итерация 4.</b> Рассмотрим узлы
+	</p>
+	<br><p align="center"><img src="../../images/pr6/31.jpg"></p><br>
+
+	<p>Поскольку для узлов <img src="../../images/pr6/32.jpg"> имеем</p>
+	<br><p align="center"><img src="../../images/pr6/33.jpg"></p><br>
+	<p>то меняем временные метки этих  узлов:</p>
+	<br><p align="center"><img src="../../images/pr6/34.jpg"></p><br>
+
+	<p>Временные метки остальных узлов не меняем.</p>
+	<p>Среди всех узлов <img src="../../images/pr6/7.jpg"> (т.е. узлов с временными метками) находим узел <img src="../../images/pr6/8.jpg">. Это узел <img src="../../images/pr6/35.jpg"> Полагаем
+	<img src="../../images/pr6/36.jpg"> и относим узел <img src="../../images/pr6/35.jpg"> к множеству <img src="../../images/pr6/12.jpg">, заменяя <img src="../../images/pr6/12.jpg"> на <img src="../../images/pr6/37.jpg"></p>
+	<p>Полагаем <img src="../../images/pr6/38.jpg"> и переходим к следующей итерации.</p>
+<br><br>
+	<p>
+		<b>Итерация 5.</b> Рассмотрим узлы
+	</p>
+	<br><p align="center"><img src="../../images/pr6/39.jpg"></p><br>
+	<p>Поскольку для узла <img src="../../images/pr6/40.jpg"> выполняется соотношение</p>
+	<br><p align="center"><img src="../../images/pr6/41.jpg"></p><br>
+	<p>то меняем временную метки этого  узла:</p>
+	<br><p align="center"><img src="../../images/pr6/42.jpg"></p><br>
+	<p>Временные метки остальных узлов не меняем.</p>
+	<p>Среди всех узлов <img src="../../images/pr6/7.jpg"> (т.е. узлов с временными метками) находим узел <img src="../../images/pr6/8.jpg">. Это узел <img src="../../images/pr6/43.jpg"> Полагаем
+	<img src="../../images/pr6/44.jpg"> и относим узел <img src="../../images/pr6/43.jpg"> к множеству <img src="../../images/pr6/12.jpg">, заменяя <img src="../../images/pr6/12.jpg"> на <img src="../../images/pr6/45.jpg"></p>
+	<p>Полагаем <img src="../../images/pr6/46.jpg"> и переходим к следующей итерации.</p>
+<br><br>
+	<p>
+		<b>Итерация 6.</b> Рассмотрим узлы
+	</p>
+	<br><p align="center"><img src="../../images/pr6/47.jpg"></p><br>
+
+	<p>Поскольку для узла <img src="../../images/pr6/48.jpg"> выполняется соотношение</p>
+	<br><p align="center"><img src="../../images/pr6/49.jpg"></p><br>
+	<p>то меняем временную метки этого  узла:</p>
+	<br><p align="center"><img src="../../images/pr6/50.jpg"></p><br>
+	<p>Временные метки остальных узлов не меняем.</p>
+	<p>Среди всех узлов <img src="../../images/pr6/7.jpg"> (т.е. узлов с временными метками) находим узел <img src="../../images/pr6/8.jpg">. Это узел <img src="../../images/pr6/51.jpg"> Полагаем
+	<img src="../../images/pr6/52.jpg"> и относим узел <img src="../../images/pr6/51.jpg"> к множеству <img src="../../images/pr6/12.jpg">, заменяя <img src="../../images/pr6/12.jpg"> на <img src="../../images/pr6/53.jpg"></p>
+	<p>Узел <img src="../../images/pr6/54.jpg"> является помеченным.</p>
+	<p>Алгоритм заканчивает свою работу. Длина кратчайшего пути из узла <i>s=1</i> в узел <i>t=4</i> равна <img src="../../images/pr6/55.jpg"></p>
+	<p>Сам путь восстанавливаем с помощью вторых меток по правилу</p>
+	<br><p align="center"><img src="../../images/pr6/56.jpg"></p><br>
+	<p>Путь из <i>s</i> в <i>t</i> имеет вид:</p>
+	<br><p align="center"><img src="../../images/pr6/57.jpg"></p><br>
+	<p align="center"><a name="p6.1"><img src="../../images/pr6/58.jpg"></a></p>
+	<p align="center">рис. 6.1.</p>
+
+	<br>
+	</br>
+	<p><b>ЗАДАЧИ ДЛЯ САМОСТОЯТЕЛЬНОГО РЕШЕНИЯ</b></p>
+	<p>Решить задачи о нахождении дерева кратчайших путей из узла <i>s=1</i>.</p>
+	
+	<p><b>Задача 1.</b></p>
+	<p><img src="../../images/pr6/59.jpg" ></p>
+	<p>Ответ:</p>
+	<p><img src="../../images/pr6/60.jpg" ></p>
+	<p>Здесь и далее через <img src="../../images/pr6/61.jpg" > обозначена длина минимального пути из узла <i>s=1</i> в узел <i>j</i>.</p>
+
+	<p><b>Задача 2.</b></p>
+	<p><img src="../../images/pr6/62.jpg" ></p>
+	<p>Ответ:</p>
+	<p><img src="../../images/pr6/63.jpg" ></p>
+
+	<p><b>Задача 3.</b></p>
+	<p><img src="../../images/pr6/64.jpg" ></p>
+	<p>Ответ:</p>
+	<p><img src="../../images/pr6/65.jpg" ></p>
+
+	<p><b>Задача 4.</b></p>
+	<p><img src="../../images/pr6/66.jpg" ></p>
+	<p>Ответ:</p>
+	<p><img src="../../images/pr6/67.jpg" ></p>
+
+	<p><b>Задача 5.</b></p>
+	<p><img src="../../images/pr6/68.jpg" ></p>
+	<p>Ответ:</p>
+	<p><img src="../../images/pr6/69.jpg" ></p>
+
+	<p><b>Задача 6.</b></p>
+	<p><img src="../../images/pr6/70.jpg" ></p>
+	<p>Ответ:</p>
+	<p><img src="../../images/pr6/71.jpg" ></p>
+
+	<p><b>Задача 7.</b></p>
+	<p><img src="../../images/pr6/72.jpg" ></p>
+	<p>Ответ:</p>
+	<p><img src="../../images/pr6/73.jpg" ></p>
+
+	<p><b>Задача 8.</b></p>
+	<p><img src="../../images/pr6/74.jpg" ></p>
+	<p>Ответ:</p>
+	<p><img src="../../images/pr6/75.jpg" ></p>
+</div>
+
+
+
+	<div title="Bottom">
+		<p>&nbsp;</p>
+		<hr size="2" width="100%" align="center">
+		<h1 class="Bottom">
+			<a href="../pr4/pr4.htm">[назад]</a>
+		</h1>
+	</div>
+</body>
+</html>

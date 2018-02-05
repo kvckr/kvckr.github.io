@@ -1,0 +1,995 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./theme10_files/filelist.xml">
+<link rel=Edit-Time-Data href="./theme10_files/editdata.mso">
+<link rel=OLE-Object-Data href="./theme10_files/oledata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Внутренне устойчивые множества вершин</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>X</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Bomber</o:LastAuthor>
+  <o:Revision>6</o:Revision>
+  <o:TotalTime>12</o:TotalTime>
+  <o:Created>2002-06-24T17:10:00Z</o:Created>
+  <o:LastSaved>2003-02-08T01:09:00Z</o:LastSaved>
+  <o:Pages>4</o:Pages>
+  <o:Words>1389</o:Words>
+  <o:Characters>7919</o:Characters>
+  <o:Company>X</o:Company>
+  <o:Lines>65</o:Lines>
+  <o:Paragraphs>15</o:Paragraphs>
+  <o:CharactersWithSpaces>9725</o:CharactersWithSpaces>
+  <o:Version>9.2812</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>110</w:Zoom>
+  <w:Compatibility>
+   <w:DoNotUseHTMLParagraphAutoSpacing/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:1.0cm;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h5
+	{mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	text-indent:1.0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:8;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.Normal, li.Normal, div.Normal
+	{mso-style-name:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:1.0cm;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.Nextnorm, li.Nextnorm, div.Nextnorm
+	{mso-style-name:Nextnorm;
+	mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:1.0cm;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:1642542211;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1796495456 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:54.0pt;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1055"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58022627-1', 'auto');
+  ga('send', 'pageview');
+
+</script></head>
+
+<body lang=RU link=blue vlink=blue style='tab-interval:35.4pt'>
+
+<div class=Section1>
+
+<h1 align=center style='margin-top:12.0pt;margin-bottom:3.0pt;text-align:center'>
+<span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:14.0pt;font-family:"Times New Roman";mso-ansi-language:
+EN-US;font-weight:normal;mso-bidi-font-weight:bold'>
+<a href="../theme9/theme9.htm">[<span lang=RU style='mso-ansi-language:RU'>предыдущая тема</span>]</a>
+<a href="../../theory.htm">[<span lang=RU style='mso-ansi-language:RU'>оглавление</span>]</a>
+<a href="../theme11/theme11.htm">[<span lang=RU style='mso-ansi-language:RU'>следующая тема</span>]</a>
+<o:p></o:p></span></h1>
+
+
+<div class=MsoNormal align=center style='text-align:center;text-indent:0cm'><span
+style='font-size:12.0pt'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=Normal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Normal align=center style='margin-top:0cm;margin-bottom:0cm;text-align:center;text-indent:18.0pt'><b
+style='mso-bidi-font-weight:normal'><span style='mso-bidi-font-size:14.0pt'>10. Внутренне устойчивые множества вершин.<o:p>
+</o:p></span></b></p>
+
+<p class=Normal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal align=left style='margin-left:64.35pt;text-align:left;
+text-indent:-18.0pt;mso-list:l2 level1 lfo7;tab-stops:list 64.35pt'><![if !supportLists]><span
+style='font-size:12.0pt;font-family:Symbol'>- </span><![endif]><span style='font-size:12.0pt;mso-bidi-font-weight:
+bold'><a href="#mnogestvo">внутренне устойчивое (независимое) множество</a></span><o:p></o:p></p>
+
+<p class=MsoNormal align=left style='margin-left:64.35pt;text-align:left;
+text-indent:-18.0pt;mso-list:l2 level1 lfo7;tab-stops:list 64.35pt'><![if !supportLists]><span
+style='font-size:12.0pt;font-family:Symbol'>- </span><![endif]><span style='font-size:12.0pt;mso-bidi-font-weight:
+bold'><a href="#mnogestvo">полностью зависимое множество</a></span><o:p></o:p></p>
+
+<p class=MsoNormal align=left style='margin-left:64.35pt;text-align:left;
+text-indent:-18.0pt;mso-list:l2 level1 lfo7;tab-stops:list 64.35pt'><![if !supportLists]><span
+style='font-size:12.0pt;font-family:Symbol'>- </span><![endif]><span style='font-size:12.0pt;mso-bidi-font-weight:
+bold'><a href="#nul">нуль-граф</a></span><o:p></o:p></p>
+
+<p class=MsoNormal align=left style='margin-left:64.35pt;text-align:left;
+text-indent:-18.0pt;mso-list:l2 level1 lfo7;tab-stops:list 64.35pt'><![if !supportLists]><span
+style='font-size:12.0pt;font-family:Symbol'>- </span><![endif]><span style='font-size:12.0pt;mso-bidi-font-weight:
+bold'><a href="#nul">полный граф</a></span><o:p></o:p></p>
+
+<p class=MsoNormal align=left style='margin-left:64.35pt;text-align:left;
+text-indent:-18.0pt;mso-list:l2 level1 lfo7;tab-stops:list 64.35pt'><![if !supportLists]><span
+style='font-size:12.0pt;font-family:Symbol'>- </span><![endif]><span style='font-size:12.0pt;mso-bidi-font-weight:
+bold'><a href="#maximalnoe">максимальное внутренне устойчивое множество</a></span><o:p></o:p></p>
+
+<p class=MsoNormal align=left style='margin-left:64.35pt;text-align:left;
+text-indent:-18.0pt;mso-list:l2 level1 lfo7;tab-stops:list 64.35pt'><![if !supportLists]><span
+style='font-size:12.0pt;font-family:Symbol'>- </span><![endif]><span style='font-size:12.0pt;mso-bidi-font-weight:
+bold'><a href="#chislo">число внутренней устойчивости (плотность графа)</a></span><o:p></o:p></p>
+
+<p class=Normal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+
+<div class=MsoNormal align=center style='margin-right:.95pt;text-align:center;
+text-indent:0cm'><span style='font-size:12.0pt'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+
+<p class=Normal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><a
+name=mnogestvo></a><i style='mso-bidi-font-style:normal'><span
+style='font-size:12.0pt'>Определение 8.1. </span></i><span style='font-size:
+12.0pt'>Пусть </span><i style='mso-bidi-font-style:normal'><span lang=EN-US
+style='font-size:12.0pt;mso-ansi-language:EN-US'>G</span></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'>(</span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><span
+style='font-size:12.0pt'>,</span></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>E</span></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'>)</span></i><span
+style='font-size:12.0pt'> – произвольный граф. Множество вершин </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><sub><span
+style='font-size:12.0pt'>1 </span></sub></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-ansi-language:
+EN-US;mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Igrave;</span></span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt'> </span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><span style='font-size:12.0pt'> графа </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>G</span></i><span style='font-size:12.0pt'> называются
+<b><span style='mso-bidi-font-style:italic'>внутренне устойчивыми</span></b>
+или<i style='mso-bidi-font-style:normal'> </i><b><span style='mso-bidi-font-style:
+italic'>независимыми</span></b>, если никакие две вершины из </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><sub><span
+style='font-size:12.0pt'>1</span></sub></i><span style='font-size:12.0pt'> не
+смежны. Множество вершин </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>X</span></i><i
+style='mso-bidi-font-style:normal'><sub><span style='font-size:12.0pt'>2 </span></sub></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Igrave;</span></span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt'> </span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><span style='font-size:12.0pt'> графа </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>G</span></i><span style='font-size:12.0pt'> называется
+<b><span style='mso-bidi-font-style:italic'>полностью зависимым</span></b><i
+style='mso-bidi-font-style:normal'>,</i> если любые две вершины </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x</span></i><i style='mso-bidi-font-style:normal'><span
+style='font-size:12.0pt'>, </span></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>y</span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt'> </span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Iacute;</span></span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt'> </span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><sub><span
+style='font-size:12.0pt'>2</span></sub></i><span style='font-size:12.0pt'> , </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x</span></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt'> </span></i><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-ansi-language:
+EN-US;mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&sup1;</span></span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt'> </span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>y</span></i><span style='font-size:12.0pt'> смежны.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><a name=nul></a><span
+style='font-size:12.0pt'>Подграф </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>G</span></i><i
+style='mso-bidi-font-style:normal'><sub><span style='font-size:12.0pt'>1</span></sub></i><span
+style='font-size:12.0pt'> графа </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>G</span></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'>(</span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><span
+style='font-size:12.0pt'>,</span></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>E</span></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'>)</span></i><span
+style='font-size:12.0pt'>, порождаемый внутренне устойчивым множеством </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><sub><span
+style='font-size:12.0pt'>1</span></sub></i><span style='font-size:12.0pt'>,
+является <b>нуль-графом</b>. Подграф </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>G</span></i><i
+style='mso-bidi-font-style:normal'><sub><span style='font-size:12.0pt'>2</span></sub></i><span
+style='font-size:12.0pt'> обыкновенного неориентированного графа </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>G</span></i><i style='mso-bidi-font-style:normal'><span
+style='font-size:12.0pt'>(</span></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>X</span></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'>,</span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>E</span></i><i style='mso-bidi-font-style:normal'><span
+style='font-size:12.0pt'>)</span></i><span style='font-size:12.0pt'>,
+порожденного полностью зависимым множеством </span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>X</span></i><i
+style='mso-bidi-font-style:normal'><sub><span style='font-size:12.0pt'>2</span></sub></i><span
+style='font-size:12.0pt'>, является <b>полным</b> графом.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><a
+name=maximalnoe></a><span style='font-size:12.0pt'>Внутренне устойчивое
+множество </span><i style='mso-bidi-font-style:normal'><span lang=EN-US
+style='font-size:12.0pt;mso-ansi-language:EN-US'>X</span></i><i
+style='mso-bidi-font-style:normal'><sub><span style='font-size:12.0pt'>1</span></sub></i><span
+style='font-size:12.0pt'> графа </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>G</span></i><span
+style='font-size:12.0pt'> называется <b><span style='mso-bidi-font-style:italic'>максимальным</span></b><i
+style='mso-bidi-font-style:normal'>, </i>если оно теряет свойство внутренней
+устойчивости при добавлении любой вершины.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><a
+name="teor8_1"></a><b style='mso-bidi-font-weight:normal'><span
+style='font-size:12.0pt'>Теорема 8.1.</span></b><span style='font-size:12.0pt'>Пусть
+</span><i style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:
+12.0pt;mso-ansi-language:EN-US'>G</span></i><i style='mso-bidi-font-style:normal'><span
+style='font-size:12.0pt'>(</span></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>X</span></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'>,</span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>E</span></i><i style='mso-bidi-font-style:normal'><span
+style='font-size:12.0pt'>)</span></i><span style='font-size:12.0pt'> –
+произвольный граф. Внутренне устойчивое множество </span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>X</span></i><i
+style='mso-bidi-font-style:normal'><sub><span style='font-size:12.0pt'>1</span></sub></i><span
+style='font-size:12.0pt'> графа </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>G</span></i><span
+style='font-size:12.0pt'> является максимальным тогда и только тогда, когда
+каждая вершина </span><i style='mso-bidi-font-style:normal'><span lang=EN-US
+style='font-size:12.0pt;mso-ansi-language:EN-US'>x</span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt'> </span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Icirc;</span></span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt'> </span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><span
+style='font-size:12.0pt'>\</span></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>X</span></i><i
+style='mso-bidi-font-style:normal'><sub><span style='font-size:12.0pt'>1</span></sub></i><span
+style='font-size:12.0pt'>, не имеющая петель, смежна с некоторой вершиной </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>y</span></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-ansi-language:
+EN-US;mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Icirc;</span></span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt'> </span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><sub><span
+style='font-size:12.0pt'>1</span></sub></i><span style='font-size:12.0pt'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'>Доказательство<b style='mso-bidi-font-weight:normal'>.
+</b>Докажем необходимость. Предположим, что существует вершина </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x</span></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt'> </span></i><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-ansi-language:
+EN-US;mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Icirc;</span></span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt'> </span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><span
+style='font-size:12.0pt'>\</span></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>X</span></i><i
+style='mso-bidi-font-style:normal'><sub><span style='font-size:12.0pt'>1</span></sub></i><span
+style='font-size:12.0pt'>, не смежная ни с какой вершиной из </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><sub><span
+style='font-size:12.0pt'>1</span></sub></i><span style='font-size:12.0pt'>,
+причем в вершине </span><i style='mso-bidi-font-style:normal'><span lang=EN-US
+style='font-size:12.0pt;mso-ansi-language:EN-US'>x</span></i><span
+style='font-size:12.0pt'> нет петель. Тогда множество </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><sub><span
+style='font-size:12.0pt'>1 </span></sub></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-ansi-language:
+EN-US;mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Egrave;</span></span></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'> {</span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x</span></i><i style='mso-bidi-font-style:normal'><span
+style='font-size:12.0pt'>}</span></i><span style='font-size:12.0pt'> внутренне
+устойчиво, вопреки максимальности </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>X</span></i><i
+style='mso-bidi-font-style:normal'><sub><span style='font-size:12.0pt'>1</span></sub></i><span
+style='font-size:12.0pt'>. Итак, необходимость доказана.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'>Доказательство достаточности. Пусть </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><sub><span
+style='font-size:12.0pt'>1</span></sub></i><span style='font-size:12.0pt'>
+обладает тем свойством, что каждая вершина </span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x</span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt'> </span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Icirc;</span></span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt'> </span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><span
+style='font-size:12.0pt'>\</span></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>X</span></i><i
+style='mso-bidi-font-style:normal'><sub><span style='font-size:12.0pt'>1</span></sub></i><span
+style='font-size:12.0pt'>, не имеющая петель, смежна с некоторой вершиной<span
+style="mso-spacerun: yes">  </span>из </span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>X</span></i><i
+style='mso-bidi-font-style:normal'><sub><span style='font-size:12.0pt'>1</span></sub></i><span
+style='font-size:12.0pt'>. Если </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>X</span></i><i
+style='mso-bidi-font-style:normal'><sub><span style='font-size:12.0pt'>1</span></sub></i><span
+style='font-size:12.0pt'> не максимально, то существует вершина </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x</span></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt'> </span></i><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-ansi-language:
+EN-US;mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Icirc;</span></span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt'> </span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><span
+style='font-size:12.0pt'>\</span></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>X</span></i><i
+style='mso-bidi-font-style:normal'><sub><span style='font-size:12.0pt'>1</span></sub></i><span
+style='font-size:12.0pt'>, такая, что </span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>X</span></i><i
+style='mso-bidi-font-style:normal'><sub><span style='font-size:12.0pt'>1</span></sub></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Egrave;</span></span></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'>{</span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x</span></i><i style='mso-bidi-font-style:normal'><span
+style='font-size:12.0pt'>}</span></i><span style='font-size:12.0pt'> –
+внутренне устойчивое множество. Тогда в вершине </span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x</span></i><span
+style='font-size:12.0pt'> нет петель, и вершина </span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x</span></i><span
+style='font-size:12.0pt'> не смежна ни с какой вершиной из </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><sub><span
+style='font-size:12.0pt'>1</span></sub></i><span style='font-size:12.0pt'>.
+Полученное противоречие доказывает достаточность.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><a
+name=chislo></a><span style='font-size:12.0pt'>Пусть </span><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt;font-family:
+Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-char-type:symbol;mso-symbol-font-family:Symbol'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Symbol'>E</span></span></i><span
+style='font-size:12.0pt'> – множество всех внутренне устойчивых множеств графа </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>G</span></i><span style='font-size:12.0pt'>. Число<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:0cm;margin-right:15.0pt;
+margin-bottom:0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-align:center;
+text-indent:18.0pt'><i style='mso-bidi-font-style:normal'><sub><span
+style='font-size:12.0pt'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1026" type="#_x0000_t75" style='width:104.25pt;
+ height:35.25pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme10_files/image001.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=139 height=47
+src="./theme10_files/image002.gif" v:shapes="_x0000_i1026"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1026"
+  DrawAspect="Content" ObjectID="_1106178995">
+ </o:OLEObject>
+</xml><![endif]--></span></sub></i><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'>называется <b><span style='mso-bidi-font-style:italic'>числом
+внутренней устойчивости</span></b><i style='mso-bidi-font-style:normal'>,</i>
+или <b><span style='mso-bidi-font-style:italic'>плотностью</span></b> графа </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>G</span></i><span style='font-size:12.0pt'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoHeading8 style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'>Метод К.Магу нахождения максимальных<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:0cm;margin-right:15.0pt;
+margin-bottom:0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-align:center;
+text-indent:18.0pt'><b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:
+normal'><span style='font-size:12.0pt'>внутренне устойчивых множеств<o:p></o:p></span></i></b></p>
+
+<p class=MsoNormal align=center style='margin-top:0cm;margin-right:15.0pt;
+margin-bottom:0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-align:center;
+text-indent:18.0pt'><span style='font-size:12.0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'>Пусть </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>G</span></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'>(</span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><span
+style='font-size:12.0pt'>,</span></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>E</span></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'>)</span></i><span
+style='font-size:12.0pt'> – ориентированный граф без параллельных ребер и </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><sub><span
+style='font-size:12.0pt'>1</span></sub></i><span style='font-size:12.0pt'> –
+некоторое множество вершин этого графа </span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>G</span></i><span
+style='font-size:12.0pt'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'>Введем булевы переменные </span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>Y<sub>i</sub></span></i><span
+style='font-size:12.0pt'>, соответствующие вершинам графа </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x<sub>i</sub></span></i><span style='font-size:12.0pt'>
+(</span><i style='mso-bidi-font-style:normal'><span lang=EN-US
+style='font-size:12.0pt;mso-ansi-language:EN-US'>i</span></i><span
+style='font-size:12.0pt'> = 1, . . . , </span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>n</span></i><span
+style='font-size:12.0pt'>). Рассмотрим оценку &lt;</span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-ansi-language:
+EN-US;mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>e</span></span></i><i
+style='mso-bidi-font-style:normal'><sub><span style='font-size:12.0pt'>1</span></sub></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'>, . . . , </span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>e</span></span></i><i
+style='mso-bidi-font-style:normal'><sub><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>n</span></sub></i><span style='font-size:12.0pt'>&gt;
+списка переменных<span style="mso-spacerun: yes">  </span>&lt;</span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>Y</span></i><i style='mso-bidi-font-style:normal'><sub><span
+style='font-size:12.0pt'>1, . . . , </span></sub></i><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>Y<sub>n</sub></span></i><span
+style='font-size:12.0pt'>&gt;. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'>Отметим, что условие принадлежности вершины </span><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x<sub>i</sub></span><span
+style='font-size:12.0pt'> множеству </span><span lang=EN-US style='font-size:
+12.0pt;mso-ansi-language:EN-US'>X</span><sub><span style='font-size:12.0pt'>1 </span></sub><span
+style='font-size:12.0pt'>внутренне устойчивых может быть записано следующим
+образом:<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:6.0pt;margin-right:15.0pt;
+margin-bottom:6.0pt;margin-left:18.0pt;text-align:center;text-indent:18.0pt'><span
+style='font-size:12.0pt'>если<span style='mso-tab-count:1'>    </span></span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>e</span></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-ansi-language:
+EN-US;mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Icirc;</span></span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>E</span></i><span lang=EN-US style='font-size:12.0pt'>
+</span><span style='font-size:12.0pt'>и </span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>e</span></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'>=&lt;</span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x<sub>i</sub></span></i><i style='mso-bidi-font-style:
+normal'><span style='font-size:12.0pt'>, </span></i><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x<sub>j</sub></span></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'>&gt; </span></i><span
+style='font-size:12.0pt'>то </span><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x<sub>j</sub></span><span lang=EN-US style='font-size:
+12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&sup1;</span></span><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>X</span><sub><span
+style='font-size:12.0pt'>1</span></sub><span style='font-size:12.0pt'>,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><sub><span
+style='font-size:12.0pt'><!--[if gte vml 1]><v:shape id="_x0000_i1027" type="#_x0000_t75"
+ style='width:9.75pt;height:20.25pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme10_files/image003.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=13 height=27
+src="./theme10_files/image004.gif" v:shapes="_x0000_i1027"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1027"
+  DrawAspect="Content" ObjectID="_1106178996">
+ </o:OLEObject>
+</xml><![endif]--></span></sub><span style='font-size:12.0pt'>а это равносильно
+тому, что<o:p></o:p></span></p>
+
+<p class=MsoNormal align=right style='margin-top:6.0pt;margin-right:15.0pt;
+margin-bottom:6.0pt;margin-left:18.0pt;text-align:right;text-indent:18.0pt'><sub><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1028" type="#_x0000_t75" style='width:9.75pt;height:20.25pt'
+ o:ole="" fillcolor="window">
+ <v:imagedata src="./theme10_files/image003.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=13 height=27
+src="./theme10_files/image005.gif" v:shapes="_x0000_i1028"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1028"
+  DrawAspect="Content" ObjectID="_1106178997">
+ </o:OLEObject>
+</xml><![endif]--><!--[if gte vml 1]><v:shape id="_x0000_i1029" type="#_x0000_t75"
+ style='width:105pt;height:26.25pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme10_files/image006.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=140 height=35
+src="./theme10_files/image007.gif" v:shapes="_x0000_i1029"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1029"
+  DrawAspect="Content" ObjectID="_1106178998">
+ </o:OLEObject>
+</xml><![endif]--></span></sub><span style='font-size:12.0pt'><span
+style='mso-tab-count:2'>                    </span>для<span
+style="mso-spacerun: yes">  </span><span style='mso-tab-count:1'>    </span><sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1030" type="#_x0000_t75" style='width:84pt;height:18.75pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme10_files/image008.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=112 height=25
+src="./theme10_files/image009.gif" v:shapes="_x0000_i1030"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1030"
+  DrawAspect="Content" ObjectID="_1106178999">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-tab-count:3'>                               </span>(8.1)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'>где<span style="mso-spacerun: yes">  </span></span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>a<sub>ij</sub></span></i><span lang=EN-US
+style='font-size:12.0pt'> </span><span style='font-size:12.0pt'>– элемент
+матрицы смежности<span style="mso-spacerun: yes">  </span>вершин графа.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'>Условие (8.2) можно записать в виде:<o:p></o:p></span></p>
+
+<p class=MsoNormal align=right style='margin-top:0cm;margin-right:15.0pt;
+margin-bottom:0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-align:right;
+text-indent:18.0pt'><sub><span style='font-size:12.0pt'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1031" type="#_x0000_t75" style='width:147.75pt;height:45pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme10_files/image010.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=197 height=60
+src="./theme10_files/image011.gif" v:shapes="_x0000_i1031"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1031"
+  DrawAspect="Content" ObjectID="_1106179000">
+ </o:OLEObject>
+</xml><![endif]--></span></sub><span style='font-size:12.0pt'><span
+style='mso-tab-count:4'>                                             </span>(8.2)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'>Заметим, что при </span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>a<sub>ij</sub></span></i><span
+style='font-size:12.0pt'>=0 заведомо выполняется равенство (8.1), а при </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>a<sub>ij</sub></span></i><span style='font-size:12.0pt'>
+=1 справедливо <o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:6.0pt;margin-right:15.0pt;
+margin-bottom:6.0pt;margin-left:18.0pt;text-align:center;text-indent:18.0pt'><sub><span
+style='font-size:12.0pt'><!--[if gte vml 1]><v:shape id="_x0000_i1032" type="#_x0000_t75"
+ style='width:140.25pt;height:24pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme10_files/image012.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=187 height=32
+src="./theme10_files/image013.gif" v:shapes="_x0000_i1032"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1032"
+  DrawAspect="Content" ObjectID="_1106179001">
+ </o:OLEObject>
+</xml><![endif]--></span></sub><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'><span style="mso-spacerun: yes">  </span>Поэтому условие
+(8.3) можно записать так:<o:p></o:p></span></p>
+
+<p class=MsoNormal align=right style='margin-top:0cm;margin-right:15.0pt;
+margin-bottom:0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-align:right;
+text-indent:18.0pt'><sub><span style='font-size:12.0pt'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1033" type="#_x0000_t75" style='width:99pt;height:36.75pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme10_files/image014.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=132 height=49
+src="./theme10_files/image015.gif" v:shapes="_x0000_i1033"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1033"
+  DrawAspect="Content" ObjectID="_1106179002">
+ </o:OLEObject>
+</xml><![endif]--></span></sub><span style='font-size:12.0pt'><span
+style='mso-tab-count:5'>                                                 </span>(8.3)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'>или, обозначив </span><span lang=EN-US
+style='font-size:12.0pt;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:15.0pt;
+margin-bottom:12.0pt;margin-left:18.0pt;text-align:center;text-indent:18.0pt'><sub><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1034" type="#_x0000_t75" style='width:165pt;height:36.75pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme10_files/image016.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=220 height=49
+src="./theme10_files/image017.gif" v:shapes="_x0000_i1034"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1034"
+  DrawAspect="Content" ObjectID="_1106179003">
+ </o:OLEObject>
+</xml><![endif]--></span></sub><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'><span style="mso-spacerun: yes"> </span>в виде <o:p></o:p></span></p>
+
+<p class=MsoNormal align=right style='margin-top:0cm;margin-right:15.0pt;
+margin-bottom:0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-align:right;
+text-indent:18.0pt'><sub><span style='font-size:12.0pt'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1035" type="#_x0000_t75" style='width:99.75pt;height:20.25pt'
+ o:ole="" fillcolor="window">
+ <v:imagedata src="./theme10_files/image018.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=133 height=27
+src="./theme10_files/image019.gif" v:shapes="_x0000_i1035"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1035"
+  DrawAspect="Content" ObjectID="_1106179004">
+ </o:OLEObject>
+</xml><![endif]--></span></sub><span style='font-size:12.0pt'><span
+style='mso-tab-count:5'>                                                 </span>(8.4)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'>Таким образом, справедливо следующее утверждение:
+необходимым и достаточным условием внутренней устойчивости множества </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><sub><span
+style='font-size:12.0pt'>1</span></sub></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-ansi-language:
+EN-US;mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Iacute;</span></span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt'> </span></i><span style='font-size:12.0pt'>является
+выполнение равенства (8.4).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'>Из приведенного утверждения следует, что внутренне
+устойчивые множества вершин графа </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>G</span></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'>,</span></i><span
+style='font-size:12.0pt'> и только они, соответствуют оценкам списка переменных
+&lt;</span><i style='mso-bidi-font-style:normal'><span lang=EN-US
+style='font-size:12.0pt;mso-ansi-language:EN-US'>Y</span></i><i
+style='mso-bidi-font-style:normal'><sub><span style='font-size:12.0pt'>1</span></sub></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'>, </span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>Y</span></i><i style='mso-bidi-font-style:normal'><sub><span
+style='font-size:12.0pt'>2</span></sub></i><i style='mso-bidi-font-style:normal'><span
+style='font-size:12.0pt'>, ... ,</span></i><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>Y<sub>n</sub></span></i><span
+style='font-size:12.0pt'>), на котором выполняется равенство </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>F</span></i><span style='font-size:12.0pt'> = 1, что
+дает простой способ выделения всех внутренне устойчивых множеств.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><!--[if gte vml 1]><v:shape
+ id="_x0000_s1026" type="#_x0000_t75" style='position:absolute;left:0;
+ text-align:left;margin-left:0;margin-top:65.95pt;width:193.35pt;height:210.4pt;
+ z-index:-1;mso-wrap-edited:f;mso-position-horizontal:left' wrapcoords="9546 354 9546 974 10221 1770 10800 1770 9064 3187 3279 8852 482 9384 0 9561 0 10269 2796 11685 3279 13102 3664 14518 3954 15934 4339 17351 4339 17793 4532 19298 5014 19564 10800 20184 4821 20272 4725 21069 5689 21423 6268 21423 10800 20184 18900 20095 19093 18944 16971 18767 17357 17351 18514 11685 18900 10269 20443 10269 21021 9826 20732 8852 19093 7436 18418 6020 17357 4515 15814 3630 14754 3187 10993 1770 10993 974 10704 354 9546 354"
+ o:allowincell="f" fillcolor="window">
+ <v:imagedata src="./theme10_files/image020.wmz" o:title="" blacklevel="1966f"/>
+ <w:wrap type="square" side="right" anchorx="page"/>
+</v:shape><![if gte mso 9]><o:OLEObject Type="Embed" ProgID="Word.Picture.8"
+ ShapeID="_x0000_s1026" DrawAspect="Content" ObjectID="_1106179005">
+</o:OLEObject>
+<![endif]><![endif]--><![if !vml]><img width=258 height=280
+src="./theme10_files/image021.gif" align=left hspace=12 v:shapes="_x0000_s1026"><![endif]><span
+style='font-size:12.0pt'>Для определения всех внутренне устойчивых множеств
+вершин графа приведем формулу (8.4) к дизъюнктивной нормальной форме (ДНФ), а
+затем, используя любой метод минимизации логических функций, к минимальной ДНФ.
+Каждой элементарной конъюнкции полученного выражения соответствует множество
+внутренне устойчивых вершин графа, которое содержит вершины графа, не вошедшие
+в это элементарное произведение.<u><o:p></o:p></u></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><u><span
+style='font-size:12.0pt'>Пример 8.1. </span></u><span style='font-size:12.0pt'><span
+style="mso-spacerun: yes"> </span>Построить множества внутренне устойчивых
+вершин графа, приведенного на рис. 8.1.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'>Составим логическую функцию </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>F</span></i><span style='font-size:12.0pt'> согласно
+(8.4)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:15.0pt;margin-bottom:
+12.0pt;margin-left:18.0pt;text-indent:18.0pt'><sub><span style='font-size:12.0pt'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1037" type="#_x0000_t75" style='width:191.25pt;height:57.75pt'
+ o:ole="" fillcolor="window">
+ <v:imagedata src="./theme10_files/image022.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=255 height=77
+src="./theme10_files/image023.gif" v:shapes="_x0000_i1037"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1037"
+  DrawAspect="Content" ObjectID="_1106179006">
+ </o:OLEObject>
+</xml><![endif]--></span></sub><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=Nextnorm style='margin-top:0cm;margin-right:15.0pt;margin-bottom:0cm;
+margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'>Определяем минимальную ДНФ этой функции:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:15.0pt;margin-bottom:
+12.0pt;margin-left:18.0pt;text-indent:18.0pt'><sub><span style='font-size:12.0pt'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1038" type="#_x0000_t75" style='width:9.75pt;height:20.25pt'
+ o:ole="" fillcolor="window">
+ <v:imagedata src="./theme10_files/image003.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=13 height=27
+src="./theme10_files/image024.gif" v:shapes="_x0000_i1038"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1038"
+  DrawAspect="Content" ObjectID="_1106179007">
+ </o:OLEObject>
+</xml><![endif]--><!--[if gte vml 1]><v:shape id="_x0000_i1039" type="#_x0000_t75"
+ style='width:431.25pt;height:21.75pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme10_files/image025.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=575 height=29
+src="./theme10_files/image026.gif" v:shapes="_x0000_i1039"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1039"
+  DrawAspect="Content" ObjectID="_1106179008">
+ </o:OLEObject>
+</xml><![endif]--></span></sub><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'>Выбираем вершины, не вошедшие в состав элементарных
+конъюнкций:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><sub><span
+style='font-size:12.0pt'><!--[if gte vml 1]><v:shape id="_x0000_i1040" type="#_x0000_t75"
+ style='width:81.75pt;height:20.25pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme10_files/image027.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=109 height=27
+src="./theme10_files/image028.gif" v:shapes="_x0000_i1040"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1040"
+  DrawAspect="Content" ObjectID="_1106179009">
+ </o:OLEObject>
+</xml><![endif]--></span></sub><span style='font-size:12.0pt'><span
+style='mso-tab-count:1'>        </span><sub><!--[if gte vml 1]><v:shape id="_x0000_i1041"
+ type="#_x0000_t75" style='width:81pt;height:20.25pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme10_files/image029.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=108 height=27
+src="./theme10_files/image030.gif" v:shapes="_x0000_i1041"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1041"
+  DrawAspect="Content" ObjectID="_1106179010">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-tab-count:1'>        </span><sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1042" type="#_x0000_t75" style='width:65.25pt;height:20.25pt'
+ o:ole="" fillcolor="window">
+ <v:imagedata src="./theme10_files/image031.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=87 height=27
+src="./theme10_files/image032.gif" v:shapes="_x0000_i1042"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1042"
+  DrawAspect="Content" ObjectID="_1106179011">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-tab-count:2'>              </span><sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1043" type="#_x0000_t75" style='width:84pt;height:20.25pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme10_files/image033.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=112 height=27
+src="./theme10_files/image034.gif" v:shapes="_x0000_i1043"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1043"
+  DrawAspect="Content" ObjectID="_1106179012">
+ </o:OLEObject>
+</xml><![endif]--><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:15.0pt;margin-bottom:
+0cm;margin-left:18.0pt;margin-bottom:.0001pt;text-indent:18.0pt'><span
+style='font-size:12.0pt'>Нетрудно убедиться, что полученные множества<span
+style="mso-spacerun: yes">  </span>являются множествами внутренне устойчивых
+вершин графа, приведенного на рис. 8.1.<o:p></o:p></span></p>
+
+<p class=Normal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+
+<div class=MsoNormal align=center style='text-align:center;text-indent:0cm'><span
+style='font-size:12.0pt'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+
+<h1 align=center style='margin-top:3.0pt;margin-bottom:12.0pt;text-align:center'>
+<span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:14.0pt;font-family:"Times New Roman";mso-ansi-language:
+EN-US;font-weight:normal;mso-bidi-font-weight:bold'>
+<a href="../theme9/theme9.htm">[<span lang=RU style='mso-ansi-language:RU'>предыдущая тема</span>]</a>
+<a href="../../theory.htm">[<span lang=RU style='mso-ansi-language:RU'>оглавление</span>]</a>
+<a href="../theme11/theme11.htm">[<span lang=RU style='mso-ansi-language:RU'>следующая тема</span>]</a>
+<o:p></o:p></span></h1>
+
+</div>
+
+</body>
+
+</html>

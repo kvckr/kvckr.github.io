@@ -1,0 +1,957 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+.markdown-body .highlight {
+  background: #ffffff;
+}
+
+.markdown-body .highlight .c {
+  color: #999988;
+  font-style: italic;
+}
+
+.markdown-body .highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+
+.markdown-body .highlight .k {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .o {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .cm {
+  color: #999988;
+  font-style: italic;
+}
+
+.markdown-body .highlight .cp {
+  color: #999999;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .c1 {
+  color: #999988;
+  font-style: italic;
+}
+
+.markdown-body .highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.markdown-body .highlight .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+
+.markdown-body .highlight .gd .x {
+  color: #000000;
+  background-color: #ffaaaa;
+}
+
+.markdown-body .highlight .ge {
+  font-style: italic;
+}
+
+.markdown-body .highlight .gr {
+  color: #aa0000;
+}
+
+.markdown-body .highlight .gh {
+  color: #999999;
+}
+
+.markdown-body .highlight .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+
+.markdown-body .highlight .gi .x {
+  color: #000000;
+  background-color: #aaffaa;
+}
+
+.markdown-body .highlight .go {
+  color: #888888;
+}
+
+.markdown-body .highlight .gp {
+  color: #555555;
+}
+
+.markdown-body .highlight .gs {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .gu {
+  color: #800080;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .gt {
+  color: #aa0000;
+}
+
+.markdown-body .highlight .kc {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kd {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kn {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kp {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kr {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kt {
+  color: #445588;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .m {
+  color: #009999;
+}
+
+.markdown-body .highlight .s {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .n {
+  color: #333333;
+}
+
+.markdown-body .highlight .na {
+  color: teal;
+}
+
+.markdown-body .highlight .nb {
+  color: #0086b3;
+}
+
+.markdown-body .highlight .nc {
+  color: #445588;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .no {
+  color: teal;
+}
+
+.markdown-body .highlight .ni {
+  color: purple;
+}
+
+.markdown-body .highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .nf {
+  color: #990000;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .nn {
+  color: #555555;
+}
+
+.markdown-body .highlight .nt {
+  color: navy;
+}
+
+.markdown-body .highlight .nv {
+  color: teal;
+}
+
+.markdown-body .highlight .ow {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .w {
+  color: #bbbbbb;
+}
+
+.markdown-body .highlight .mf {
+  color: #009999;
+}
+
+.markdown-body .highlight .mh {
+  color: #009999;
+}
+
+.markdown-body .highlight .mi {
+  color: #009999;
+}
+
+.markdown-body .highlight .mo {
+  color: #009999;
+}
+
+.markdown-body .highlight .sb {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sc {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sd {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .s2 {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .se {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sh {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .si {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sx {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sr {
+  color: #009926;
+}
+
+.markdown-body .highlight .s1 {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .ss {
+  color: #990073;
+}
+
+.markdown-body .highlight .bp {
+  color: #999999;
+}
+
+.markdown-body .highlight .vc {
+  color: teal;
+}
+
+.markdown-body .highlight .vg {
+  color: teal;
+}
+
+.markdown-body .highlight .vi {
+  color: teal;
+}
+
+.markdown-body .highlight .il {
+  color: #009999;
+}
+
+.markdown-body .highlight .gc {
+  color: #999;
+  background-color: #EAF2F5;
+}
+
+.markdown-body .octicon {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+</style><title>Лекция 10</title><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58022627-1', 'auto');
+  ga('send', 'pageview');
+
+</script></head><body><article class="markdown-body"><h1>
+<a id="user-content-Лекция-10" class="anchor" href="#%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-10" aria-hidden="true"><span class="octicon octicon-link"></span></a>Лекция 10</h1>
+
+<h2>
+<a id="user-content-Физическая-природа-источников-радиационной-опасности-для-человека-и-природной-среды" class="anchor" href="#%D0%A4%D0%B8%D0%B7%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F-%D0%BF%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0-%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2-%D1%80%D0%B0%D0%B4%D0%B8%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9-%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B4%D0%BB%D1%8F-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D0%B8-%D0%BF%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9-%D1%81%D1%80%D0%B5%D0%B4%D1%8B" aria-hidden="true"><span class="octicon octicon-link"></span></a>Физическая природа источников радиационной опасности для человека и природной среды.</h2>
+
+<h3>
+<a id="user-content-Основные-определения" class="anchor" href="#%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5-%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>Основные определения</h3>
+
+<p><strong>Атом</strong> - наименьшая часть химического элемента, которая существует в свободном состоянии или связана в виде молекул. Состоит из положительно заряженного ядра, вокруг которого движутся по строго определенным орбитам отрицательно заряженные электроны. Основная масса атома сосредоточена в ядре. Располагаясь на определенном расстоянии от ядра электроны образуют электронные оболочки. Каждая оболочка характеризуется энергетическим уровнем.</p>
+
+<p><strong>Нуклоны</strong> - общее наименование для протонов и нейтронов.</p>
+
+<p><strong>Нуклиды</strong> - общее наименование атомных ядер, которые отвечают за число протонов и нейтронов.</p>
+
+<p><strong>Изотопы</strong> - разновидности одного и того же химического элемента, которые отличаются массой атома. Отчисляются числом нейтронов, но содержат одинаковое число протонов. Выделяют <strong>устойчивые</strong> и <strong>радиоактивные</strong> изотопы.</p>
+
+<p><strong>Протон</strong> - относительно стабильная элементарная частица с положительным зарядом. Протоны вместе с нейтронами образуют ядра всех положительных элементов. При этом число протонов в ядре равно атомному номеру элемента. При определенных условиях протон при внутренних ядерных превращениях переходит в нейтрон через бета распад ядер.</p>
+
+<p><strong>Позитрон</strong> - элементарная частица, равная массе электрона но имеющая положительный заряд.</p>
+
+<p><strong>Нейтрон</strong> - электрически нейтрален и почти равен массе протона. При слабом взаимодействии в ядре нейтрон может превратиться в протон через бета распад.</p>
+
+<p>Прочность ядра зависит от соотношения полей в ядре:</p>
+
+<ol>
+<li>Электрического.</li>
+<li>Гравитационного.</li>
+<li>Ядерного (самое сильное).</li>
+<li>Электромагнитного.</li>
+</ol>
+
+<p>Когда количество электронов равно числу протонов атом относительно устойчив и электрически нейтрален.</p>
+
+<p>Экспериментально доказано что масса ядра меньше суммы масс входящих нуклонов. Это явление называют <strong>дефектом массы</strong>. Масса атома, ядра и его составных частей измеряется в <strong>атомных единицах массы</strong>. Энергия, которую необходимо затратить для разрушения ядра и разделения его на свободные нуклоны называют <strong>энергией связи ядра</strong>. Чем сильнее нуклоны взаимодействуют между собой в ядре, тем большую работу надо совершить для разрушения.</p>
+
+<p><strong>Радионуклиды</strong> - это изотопы, ядра которых способны самопроизвольно распадаться. Количество ядерных превращений тяжелых радионуклидов может быть различным.</p>
+
+<h3>
+<a id="user-content-Виды-радиоактивного-распада" class="anchor" href="#%D0%92%D0%B8%D0%B4%D1%8B-%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE-%D1%80%D0%B0%D1%81%D0%BF%D0%B0%D0%B4%D0%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>Виды радиоактивного распада</h3>
+
+<p>Известны следующие типы радиоактивного распада:</p>
+
+<ol>
+<li><strong>Альфа-распад.</strong></li>
+<li><strong>Бета-распад.</strong></li>
+<li><strong>Гамма-распад.</strong></li>
+</ol>
+
+<h4>
+<a id="user-content-Альфа-распад" class="anchor" href="#%D0%90%D0%BB%D1%8C%D1%84%D0%B0-%D1%80%D0%B0%D1%81%D0%BF%D0%B0%D0%B4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Альфа-распад</h4>
+
+<p>Характерен для ядер тяжелых элементов. При альфа-распаде ядро атома испускает 2 протона и 2 нейтрона, которые связаны в ядро атома гелия. Длинна пути пробега альфа частиц в воздухе составляет 3-7 см и зависит от скорости частиц и плотности среды. В тканях организма этот путь измеряется в микрометрах. Альфа частицы не проникают через обычную одежду и для задержки и поглощения достаточно листа бумаги. Однако имея низкую проникающую способность альфа частицы обладают высоким ионизирующим действием. На пути пробега они теряют энергию на ионизацию молекул среды и образуют сотни тысяч пар ионов. Наибольшая плотность ионизации отмечается в конце пробега. Присоединив к себе недостающие электроны в конце пробега альфа частицы становятся обычными атомами гелия. При внешнем облучении альфа частицы не опасны. Поражающая их способность проявляется при попадании радиоактивных веществ внутрь организма.</p>
+
+<h4>
+<a id="user-content-Бета-распад" class="anchor" href="#%D0%91%D0%B5%D1%82%D0%B0-%D1%80%D0%B0%D1%81%D0%BF%D0%B0%D0%B4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Бета-распад</h4>
+
+<p>Процесс превращения в ядре атома протона в нейтрон, или нейтрона в протон с выбросом бета частиц. Бета-распад объединяет 3 самостоятельных вида радиоактивных превращений:</p>
+
+<ol>
+<li>Электронный распад.</li>
+<li>Позитронный распад.</li>
+<li>Поглощение одним из протонов ядра атома электрона с ближайшей орбиты. При этом заряд ядра уменьшается на 1.<br>
+</li>
+</ol>
+
+<p>Для равновесия в ядре должно быть определённое сочетание количества протонов и нейтронов. При этом для придания устойчивости ядру нейтронов должно быть больше, по мере роста порядкового номера. Но если нейтронов слишком много, то ядро становится неустойчивым, что вызывает превращение нейтрона в протон. При этом образуется химический элемент с порядковым номером на 1 больше.  Если в ядре избыток протонов, то протон превращается в нейтрон, при этом образуется химический элемент с номером на 1 меньше исходного. В связи с высокой проникающей ионизирующей способностью, бета лучи представляют опасность для людей, как при наружном облучении, так и при попадании внутрь организма. Зимняя одежда и очки защищают от внешнего бета излучения. </p>
+
+<h4>
+<a id="user-content-Гамма-распад" class="anchor" href="#%D0%93%D0%B0%D0%BC%D0%BC%D0%B0-%D1%80%D0%B0%D1%81%D0%BF%D0%B0%D0%B4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Гамма-распад</h4>
+
+<p>Электромагнитное излучение и поток квантов малой длинны волны. Происходит в том случае, если при распаде не вся энергия передаётся выбрасываемому электрону, позитрону или альфа частице. Гамма лучи распространяются со скоростью света, ионизирующая способность низкая, обладают высокой проникающей способностью. Защиту от них могут обеспечить только убежища, радиационные укрытия, подвалы.</p>
+
+<p>Главное свойство радиоактивного вещества - способность к спонтанному распаду. Это означает что ядра вещества распадаются по случайному статистическому закону.  Невозможно точно определить сколько времени проживет отдельное ядро прежде чем оно распадется.</p>
+
+<p><strong>Период полураспада</strong> - промежуток времени, за которое распадается половина первоначального числа атомов. Определяет скорость радиоактивного распада. </p>
+
+<p><strong>Активность радиоактивного распада</strong> - число распадов радиоактивных ядер за одну секунду.</p>
+
+<p>Любые ядерные излучения взаимодействуя с различными материалами ионизируют и атомы и молекулы. Ионизация среды тем сильнее, чем больше мощность дозы проникающей радиации. </p>
+
+<h3>
+<a id="user-content-Радиоактивность-и-единицы-её-измерения" class="anchor" href="#%D0%A0%D0%B0%D0%B4%D0%B8%D0%BE%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D0%B8-%D0%B5%D0%B4%D0%B8%D0%BD%D0%B8%D1%86%D1%8B-%D0%B5%D1%91-%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D1%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>Радиоактивность и единицы её измерения</h3>
+
+<p><strong>Радиоактивность</strong> - способность некоторых неустойчивых атомных ядер самопроизвольно превращаться в ядра других элементов, с испусканием различных видов радиоактивного излучения. Вне системными единицами являются Рентген и Кюри. В системе СИ эта единица получила название Беккерель (Бк). В целом это один распад в секунду. Концентрация радиоактивного вещества обычно характеризуется концентрацией его активности. Она выражается в следующих единицах:</p>
+
+<ol>
+<li>На единицу массы (Кюри на тонну, Бк на кг).</li>
+<li>На единицу объема (Кюри на метр куб)</li>
+<li>На единицу площади (Кюри на км кв, Бк на м кв).</li>
+</ol>
+
+<p><strong>Поглощенная доза</strong> (доза излучения) - энергия радиоактивного излучения, поглощенная единицей массы, облучаемого вещества или человека. С увеличением времени облучения доза всегда растет. При одинаковых условиях облучения она зависит от состава вещества. Поглощенная доза нарушает физиологические процессы в организме и приводит к лучевой болезни различной степени тяжести. Единица измерения в СИ - Грей (Гр). 1 Гр это такая единица поглощенной дозы, при которой один кг облучаемого вещества поглощает энергию в 1 Дж. Таким образом поглощенная доза излучения является основной физической величиной, которая определяет степень радиационного воздействия. <strong>Мощность поглощенной дозы</strong> характеризуется скоростью накопления дозы, и может увеличиваться или уменьшаться во времени (Гр на сек). Чаще всего используется внесистемная единица измерения рад в час либо рад в секунду.</p>
+
+<p><strong>Эквивалентная доза</strong> - понятие введено для количественного учета неблагоприятного биологического воздействия различных видов излучения. В СИ измеряется в Зивертах (Зв). Бэр - внесистемная единица (биологический эквивалент рентгена). Это такая поглощенная доза любого излучения, которая вызывает такой же биологический эффект, что и один Зв гамма излучения. 1 Зв = 1 Гр = 1 Рад = 1 рентг.</p>
+
+<p><strong>Мощность эквивалентной дозы</strong> - выражается в Зв в сек.</p>
+
+<p><strong>Экспозиционная доза</strong> - мера ионизационного действия фотонного излучения, определяемая по ионизации воздуха в условиях электронного равновесия. В СИ - 1 кулон на кг. Внесистемной единицей является рентген. Мощность экспозиционной дозы измерятся в амперах на кг. Внесистемной единицей является рентген в секунду.</p>
+
+<h3>
+<a id="user-content-Естественные-и-искусственные-источники-радиации" class="anchor" href="#%D0%95%D1%81%D1%82%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D0%B8-%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8-%D1%80%D0%B0%D0%B4%D0%B8%D0%B0%D1%86%D0%B8%D0%B8" aria-hidden="true"><span class="octicon octicon-link"></span></a>Естественные и искусственные источники радиации</h3>
+
+<p>Источники ионизирующих излучений бывают:</p>
+
+<ol>
+<li>
+<strong>Естественные</strong> (космическое излучение, излучение от природных радионуклидов земного происхождения).</li>
+<li>
+<strong>Искусственные</strong> (антропогенный радиационный фон, радиоактивное загрязнение при авариях и взрывах ядерных боеприпасов).</li>
+</ol>
+
+<p>Радиационный фон земли складывается из 3-х компонентов:</p>
+
+<ol>
+<li>Космическое излучение.</li>
+<li>Излучение от рассеянных в земной коре, воздухе и др. объектов внешней среды природных радионуклидов.</li>
+<li>Излучение от искусственных либо техногенных радионуклидов.</li>
+</ol>
+
+<p>Облучение по критерию месторасположения источников излучения делится на <strong>внешнее</strong> и <strong>внутреннее</strong> облучение:</p>
+
+<p><strong>Внешнее</strong> обусловлено источниками, расположенными вне тела человека. Источники - космическое излучение и наземные источники.</p>
+
+<p>Источником <strong>внутреннего</strong> облучения являются радионуклиды, которые находятся в организме человека.</p>
+
+<p>Космические излучения делятся на:</p>
+
+<ol>
+<li>Галактические.</li>
+<li>Межгалактические.</li>
+<li>Солнечные.</li>
+</ol>
+
+<p>А также на:</p>
+
+<ol>
+<li>Первичные.</li>
+<li>Вторичные.</li>
+</ol>
+
+<p>Электронов в космических лучах мало, так как они в свободном состоянии неустойчивы и распадаются на протоны и электроны. Энергия галактического излучения очень высокая. Наибольший прорыв космического излучения на полюсах. Частично потерявшие энергию космические лучи попадают в атмосферу, поглощаются в ней и вызывают вторичное излучение. Они представляют собой почти все известные частицы и протоны. С ростом высоты через каждый километр интенсивность излучения увеличивается вдвое. </p>
+
+<p>Радионуклиды есть везде, но в небольших количествах. Больше всего их в гранитах, глиноземах, песчанниках.  </p>
+
+<p>Радионуклиды земного происхождения делятся на:</p>
+
+<ol>
+<li>Радионуклиды средней части периодической системы Менделеева.</li>
+<li>Радиоактивные семейства.</li>
+</ol>
+
+<p>Родоначальник семейства урана - уран-238</p>
+
+<p>Конечным продуктом всех распадов является свинец.</p>
+
+<p>Одни из продуктов распада это газ. В семействе урана это аргон. В семействе актиния это актион. </p>
+</article></body></html>

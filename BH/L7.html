@@ -1,0 +1,1063 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+.markdown-body .highlight {
+  background: #ffffff;
+}
+
+.markdown-body .highlight .c {
+  color: #999988;
+  font-style: italic;
+}
+
+.markdown-body .highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+
+.markdown-body .highlight .k {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .o {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .cm {
+  color: #999988;
+  font-style: italic;
+}
+
+.markdown-body .highlight .cp {
+  color: #999999;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .c1 {
+  color: #999988;
+  font-style: italic;
+}
+
+.markdown-body .highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.markdown-body .highlight .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+
+.markdown-body .highlight .gd .x {
+  color: #000000;
+  background-color: #ffaaaa;
+}
+
+.markdown-body .highlight .ge {
+  font-style: italic;
+}
+
+.markdown-body .highlight .gr {
+  color: #aa0000;
+}
+
+.markdown-body .highlight .gh {
+  color: #999999;
+}
+
+.markdown-body .highlight .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+
+.markdown-body .highlight .gi .x {
+  color: #000000;
+  background-color: #aaffaa;
+}
+
+.markdown-body .highlight .go {
+  color: #888888;
+}
+
+.markdown-body .highlight .gp {
+  color: #555555;
+}
+
+.markdown-body .highlight .gs {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .gu {
+  color: #800080;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .gt {
+  color: #aa0000;
+}
+
+.markdown-body .highlight .kc {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kd {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kn {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kp {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kr {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kt {
+  color: #445588;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .m {
+  color: #009999;
+}
+
+.markdown-body .highlight .s {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .n {
+  color: #333333;
+}
+
+.markdown-body .highlight .na {
+  color: teal;
+}
+
+.markdown-body .highlight .nb {
+  color: #0086b3;
+}
+
+.markdown-body .highlight .nc {
+  color: #445588;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .no {
+  color: teal;
+}
+
+.markdown-body .highlight .ni {
+  color: purple;
+}
+
+.markdown-body .highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .nf {
+  color: #990000;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .nn {
+  color: #555555;
+}
+
+.markdown-body .highlight .nt {
+  color: navy;
+}
+
+.markdown-body .highlight .nv {
+  color: teal;
+}
+
+.markdown-body .highlight .ow {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .w {
+  color: #bbbbbb;
+}
+
+.markdown-body .highlight .mf {
+  color: #009999;
+}
+
+.markdown-body .highlight .mh {
+  color: #009999;
+}
+
+.markdown-body .highlight .mi {
+  color: #009999;
+}
+
+.markdown-body .highlight .mo {
+  color: #009999;
+}
+
+.markdown-body .highlight .sb {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sc {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sd {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .s2 {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .se {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sh {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .si {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sx {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sr {
+  color: #009926;
+}
+
+.markdown-body .highlight .s1 {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .ss {
+  color: #990073;
+}
+
+.markdown-body .highlight .bp {
+  color: #999999;
+}
+
+.markdown-body .highlight .vc {
+  color: teal;
+}
+
+.markdown-body .highlight .vg {
+  color: teal;
+}
+
+.markdown-body .highlight .vi {
+  color: teal;
+}
+
+.markdown-body .highlight .il {
+  color: #009999;
+}
+
+.markdown-body .highlight .gc {
+  color: #999;
+  background-color: #EAF2F5;
+}
+
+.markdown-body .octicon {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+</style><title>Лекция 7</title><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58022627-1', 'auto');
+  ga('send', 'pageview');
+
+</script></head><body><article class="markdown-body"><h1>
+<a id="user-content-Лекция-7" class="anchor" href="#%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-7" aria-hidden="true"><span class="octicon octicon-link"></span></a>Лекция 7</h1>
+
+<h2>
+<a id="user-content-Исчерпаемые-источники-энергии" class="anchor" href="#%D0%98%D1%81%D1%87%D0%B5%D1%80%D0%BF%D0%B0%D0%B5%D0%BC%D1%8B%D0%B5-%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B8-%D1%8D%D0%BD%D0%B5%D1%80%D0%B3%D0%B8%D0%B8" aria-hidden="true"><span class="octicon octicon-link"></span></a>Исчерпаемые источники энергии.</h2>
+
+<h3>
+<a id="user-content-Топливно-энергетические-ресурсы" class="anchor" href="#%D0%A2%D0%BE%D0%BF%D0%BB%D0%B8%D0%B2%D0%BD%D0%BE-%D1%8D%D0%BD%D0%B5%D1%80%D0%B3%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5-%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D1%8B" aria-hidden="true"><span class="octicon octicon-link"></span></a>Топливно-энергетические ресурсы.</h3>
+
+<p><strong>Топливные ресурсы</strong> это материальные объекты, в которых сосредоточена энергия, пригодная для практического использования человека.</p>
+
+<h4>
+<a id="user-content-Классификация" class="anchor" href="#%D0%9A%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>Классификация</h4>
+
+<p><strong>Исчерпаемые и неисчерпаемые</strong>
+Исчерпаемые делятся на:</p>
+
+<ol>
+<li><strong>Возобновляемые.</strong></li>
+<li>
+<strong>Невозобновляемые.</strong> Ресурсы, ранее накопленные в природе, но в новых биологических условиях практически не образуются.</li>
+</ol>
+
+<p>К <strong>неисчерпаемым</strong> относятся:</p>
+
+<ol>
+<li>Космические.</li>
+<li>Климатические.</li>
+<li>Водные.</li>
+</ol>
+
+<p>Все органическое топливо имеет углеродную основу и энергия высвобождается из него в процессе образования углекислого газа.<br>
+<strong>В целом все энергетические ресурсы делятся на 3 группы:</strong></p>
+
+<ol>
+<li>Ресурсы, участвующие в постоянном обороте и потоке энергии. (солнечная, космическая)</li>
+<li>Депонированные. (нефть, газ)</li>
+<li>Искусственно-активированные источники энергии. (атомная)</li>
+</ol>
+
+<h3>
+<a id="user-content-Характеристика-основных-видов-топлива" class="anchor" href="#%D0%A5%D0%B0%D1%80%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D1%85-%D0%B2%D0%B8%D0%B4%D0%BE%D0%B2-%D1%82%D0%BE%D0%BF%D0%BB%D0%B8%D0%B2%D0%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>Характеристика основных видов топлива.</h3>
+
+<h4>
+<a id="user-content-Уголь" class="anchor" href="#%D0%A3%D0%B3%D0%BE%D0%BB%D1%8C" aria-hidden="true"><span class="octicon octicon-link"></span></a>Уголь</h4>
+
+<p>Твердое органическое топливо по степени углефикации подразделяется на:</p>
+
+<ul>
+<li>Древесину</li>
+<li>Торф</li>
+<li>Бурый уголь</li>
+<li>Каменный уголь</li>
+<li>Антроцит</li>
+</ul>
+
+<p>Все они имеют продукты сгорания</p>
+
+<ul>
+<li>
+<strong>Зола</strong> - порошкообразный горючий осадок, который образуется при полном окислении горючих элементов в процессе термического разложения и обжига миниральных примесей.</li>
+<li>
+<strong>Шлак</strong> - спекшеяся зола.</li>
+</ul>
+
+<p>Важной характеристикой процесса горения твердого топлива является выход летучих веществ. Это убыль массы топлива при нагреве его без кислорода при температуре 850 градусов в течении семи минут. По этому признаку угли делятся на</p>
+
+<ul>
+<li>
+<strong>Бурые</strong> (выход более 40%)</li>
+<li>
+<strong>Каменные</strong> (от 10 до 40 %)</li>
+<li>
+<strong>Антроциты</strong> (менее 10%)</li>
+</ul>
+
+<p>Запасы в мире оцениваются в от 9 до 11 трилионов тонн. Добыча в год - 4.2 миллиарда. Основные запасы сосредоточены в России, США, Китае.<br>
+<strong>Минусы данного вида топлива:</strong></p>
+
+<ul>
+<li>Уголь является тяжелым топливом, за счет большого количества минеральных примесей.</li>
+<li>Его запасы распределены неравномерно.</li>
+</ul>
+
+<h4>
+<a id="user-content-Нефть" class="anchor" href="#%D0%9D%D0%B5%D1%84%D1%82%D1%8C" aria-hidden="true"><span class="octicon octicon-link"></span></a>Нефть</h4>
+
+<p>В зависимости от температуры перегонки нефетепродукты делятся на следующие фракции:</p>
+
+<ol>
+<li>Бензиновые. (200-225 градусов)</li>
+<li>Керосиновые (140-300 градусов)</li>
+<li>Дизельные (190-350 градусов)</li>
+<li>Соляровые (300-400 градусов)</li>
+<li>Мазутные (более 350 градусов)</li>
+</ol>
+
+<p>Мировой запас нефти составляет 840 миллиардов тонн. Основной поставщик - страны ближнего и среднего Востока. Запасы меньше, но более удобна в использовании, продукты сгорания чище, но большая себестоимость транспортировки.</p>
+
+<h4>
+<a id="user-content-Природный-газ" class="anchor" href="#%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9-%D0%B3%D0%B0%D0%B7" aria-hidden="true"><span class="octicon octicon-link"></span></a>Природный газ</h4>
+
+<p>Запас - 300-500 млн метров кубических. 
+Данный вид топлива затратен в транспортировке. Уровень загрязнения небольшой. 
+<strong>Другие виды энергетических ресурсов:</strong></p>
+
+<ol>
+<li>Искусственные горючие газы.</li>
+<li>Сжиженные газы.</li>
+<li><p>Доменные газы.</p></li>
+</ol>
+
+<ul>
+<li>Композиционные искусственные.</li>
+<li>Синтетическое топливо.</li>
+<li>Расчепляющеесе топливо.</li>
+</ul>
+
+<p><strong>Удельная энергоемкость</strong> - количество энергии, которое приходится на единицу массы физического тела энергоресурса. Для сравнения и расчета расхода топлива применяют условное топливо. Это такое топливо, при сгорании одного килограмма которого выделится <strong>29,3 * 10 ^ 6 джоулей энергии.</strong>
+<strong>Уголь</strong> - 33,5 дж(8000 килокалорий на кг)
+<strong>Дрова</strong> - 10,5 дж (2500 килокалорий)
+<strong>Нефть</strong> - 41,9 (10000)
+<strong>Газ</strong> - 46,1 (11000)
+<strong>Водород</strong> - 120,6 (28800)
+<strong>Топливо</strong> - вещество, которое при сгорании выделяет значительное количество теплоты и используется как источник энергии.
+Окислителями могут быть:</p>
+
+<ul>
+<li>Кислород воздуха.</li>
+<li>Чистый кислород.</li>
+<li>Его модификации.</li>
+<li>Азотная кислота.</li>
+<li>Перекись водорода.</li>
+</ul>
+
+<p>Топливо по агретаному состоянию классифицируется на:</p>
+
+<ol>
+<li>Твердое.</li>
+<li>Жидкое.</li>
+<li>Газообразное.</li>
+</ol>
+
+<p>По происхождению делится на:</p>
+
+<ol>
+<li><strong>Природное.</strong></li>
+<li><strong>Искусственное.</strong></li>
+</ol>
+
+<p><strong>Естественное</strong> делится на:</p>
+
+<ol>
+<li>Растительное.</li>
+<li>Ископаемое</li>
+</ol>
+
+<p><strong>Искуственное</strong> делится на</p>
+
+<ol>
+<li>Композиционное (гранулы, эмулисии, брикеты)</li>
+<li>Синтетическое (произведенное путем термохимической переработки естественного)</li>
+</ol>
+
+<p>Органическое топливо состоит из двух состовляющих:</p>
+
+<ol>
+<li>Горючее (углерод, водород, сера, кислород, озот).</li>
+<li>Негорючее (минеральная часть, влага)</li>
+</ol>
+
+<p>Стадии преобразования исходного органического материала:</p>
+
+<ol>
+<li>
+<strong>Торфяная стадия</strong> (распад высокомолекулярных веществ и синтез новых, при частичном доступе кислорода образуются торф и уголь, без кислорода - нефть и газ).</li>
+<li>
+<strong>Буроугольная стадия</strong> (при повышенной температуре и давлении идет полимеризация вещества).</li>
+<li>
+<strong>Каменноугольная стадия</strong> (дальнейшая углефикация).</li>
+</ol>
+
+<p>Важнейшей характеристикой любого топлива будет являтся <strong>теплота сгорания</strong> - количество теплоты, выделенное при полном сгорании одного моля, одного килограмма или одного метра кубического топлива. Для газообразного топлива применяется понятие объемной теплоты сгорания. <strong>Высшая теплота сгорания</strong> - количество теплоты, выделяемое при полном сгорании единицы массы топлива с образованием CO2 и SO2 в газообразном состоянии и воды в жидком. <strong>Низшая теплота</strong> - тоже самое, только вода в парообразном. Низшая отличается от высшей на величину расхода теплоты, которую затратили на испарение влаги, которая содержится в топливе и образуется при сгорании водорода.</p>
+
+<h3>
+<a id="user-content-Основные-виды-электростанций" class="anchor" href="#%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5-%D0%B2%D0%B8%D0%B4%D1%8B-%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%B9" aria-hidden="true"><span class="octicon octicon-link"></span></a>Основные виды электростанций.</h3>
+
+<p><strong>Энергия</strong> - способность совершать работу (а работа совершается тогда, когда на объект действует физическая сила) В целом различают следующие виды энергии.</p>
+
+<ol>
+<li>Механическая.</li>
+<li>Электрическая.</li>
+<li>Электромагнитная.</li>
+<li>Тепловая.</li>
+<li>Химическая.</li>
+<li>Атомная.</li>
+</ol>
+
+<p>Измеряется в <strong>джоулях</strong> или <strong>каллориях</strong>. </p>
+
+<p><strong>Причины широкого использования электричской энергии:</strong></p>
+
+<ol>
+<li>Можно получить в больших количествах вблизи месторождений ресурсов и водных источников.</li>
+<li>Можно транспортировать на дальнее расстояние большое количество и без особых потерь.</li>
+<li>Может трансформироваться в другие виды.</li>
+<li>Позволяет внедрять новых технологические процессы с высокой степенью автоматизации.</li>
+</ol>
+
+<p><strong>Виды станций:</strong></p>
+
+<ol>
+<li>ТЭС.</li>
+<li>ГЭС.</li>
+<li>ГАЭС (гидроаккумулирующая электростанция).</li>
+<li>АЭС.</li>
+<li>ПЭС. (приливная)</li>
+<li>БЭС. (ветряная)</li>
+<li>СЭС (солнечная)</li>
+</ol>
+
+<p>По назначению ТЭС делятся на 2 вида:</p>
+
+<ol>
+<li>КЭС (кондициационные, вырабатывают только электрическую энергию)</li>
+<li>ТЭЦ. (также вырабатывают тепловую)</li>
+</ol>
+
+<p>Все ТЭС работают на органическом топливе.</p>
+
+<p>В целом процесс производства электроэнергии на ТЭС разделяют на 3 цикла:</p>
+
+<ol>
+<li>Химический (в результате теплота передается пару).</li>
+<li>Механический (тепловая энергия пара превращается в механическую энергию).</li>
+<li>Электрическая (механическая энергия превращается в электрическую).</li>
+</ol>
+
+<p>В теории КПД 50 процентов. На практике около 30-40.</p>
+
+<p><strong>ГАЭС</strong>
+Высокая производительность, минимальные затраты труда.
+Минусы - большое отчуждение земель, затопление территорий.
+КПД чуть более 40 процентов.</p>
+
+<h3>
+<a id="user-content-Характеристика-топливноэнергетического-комплекса-РБ" class="anchor" href="#%D0%A5%D0%B0%D1%80%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0-%D1%82%D0%BE%D0%BF%D0%BB%D0%B8%D0%B2%D0%BD%D0%BE%D1%8D%D0%BD%D0%B5%D1%80%D0%B3%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B3%D0%BE-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D0%B0-%D0%A0%D0%91" aria-hidden="true"><span class="octicon octicon-link"></span></a>Характеристика топливноэнергетического комплекса РБ.</h3>
+
+<p>Цели:</p>
+
+<ol>
+<li>Обеспечить потребности на 20 процентов собственными ресурсами</li>
+<li>Создать стратегические запасы видов топлива в подземных хранилищах</li>
+<li>Осуществить поставки энергоносителей на основе долгосрочных контрактов.</li>
+</ol>
+
+<p>В РБ проводится политика энергосбережения</p>
+
+<ol>
+<li>Снизить энергоемкость продукции.</li>
+<li>Повысить коэффицент полезного использования топлива.</li>
+<li>Увеличить долю месных видов топлива и отходов производства.</li>
+</ol>
+</article></body></html>

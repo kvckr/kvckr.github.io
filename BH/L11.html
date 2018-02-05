@@ -1,0 +1,1014 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+.markdown-body .highlight {
+  background: #ffffff;
+}
+
+.markdown-body .highlight .c {
+  color: #999988;
+  font-style: italic;
+}
+
+.markdown-body .highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+
+.markdown-body .highlight .k {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .o {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .cm {
+  color: #999988;
+  font-style: italic;
+}
+
+.markdown-body .highlight .cp {
+  color: #999999;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .c1 {
+  color: #999988;
+  font-style: italic;
+}
+
+.markdown-body .highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.markdown-body .highlight .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+
+.markdown-body .highlight .gd .x {
+  color: #000000;
+  background-color: #ffaaaa;
+}
+
+.markdown-body .highlight .ge {
+  font-style: italic;
+}
+
+.markdown-body .highlight .gr {
+  color: #aa0000;
+}
+
+.markdown-body .highlight .gh {
+  color: #999999;
+}
+
+.markdown-body .highlight .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+
+.markdown-body .highlight .gi .x {
+  color: #000000;
+  background-color: #aaffaa;
+}
+
+.markdown-body .highlight .go {
+  color: #888888;
+}
+
+.markdown-body .highlight .gp {
+  color: #555555;
+}
+
+.markdown-body .highlight .gs {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .gu {
+  color: #800080;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .gt {
+  color: #aa0000;
+}
+
+.markdown-body .highlight .kc {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kd {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kn {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kp {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kr {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kt {
+  color: #445588;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .m {
+  color: #009999;
+}
+
+.markdown-body .highlight .s {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .n {
+  color: #333333;
+}
+
+.markdown-body .highlight .na {
+  color: teal;
+}
+
+.markdown-body .highlight .nb {
+  color: #0086b3;
+}
+
+.markdown-body .highlight .nc {
+  color: #445588;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .no {
+  color: teal;
+}
+
+.markdown-body .highlight .ni {
+  color: purple;
+}
+
+.markdown-body .highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .nf {
+  color: #990000;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .nn {
+  color: #555555;
+}
+
+.markdown-body .highlight .nt {
+  color: navy;
+}
+
+.markdown-body .highlight .nv {
+  color: teal;
+}
+
+.markdown-body .highlight .ow {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .w {
+  color: #bbbbbb;
+}
+
+.markdown-body .highlight .mf {
+  color: #009999;
+}
+
+.markdown-body .highlight .mh {
+  color: #009999;
+}
+
+.markdown-body .highlight .mi {
+  color: #009999;
+}
+
+.markdown-body .highlight .mo {
+  color: #009999;
+}
+
+.markdown-body .highlight .sb {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sc {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sd {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .s2 {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .se {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sh {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .si {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sx {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sr {
+  color: #009926;
+}
+
+.markdown-body .highlight .s1 {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .ss {
+  color: #990073;
+}
+
+.markdown-body .highlight .bp {
+  color: #999999;
+}
+
+.markdown-body .highlight .vc {
+  color: teal;
+}
+
+.markdown-body .highlight .vg {
+  color: teal;
+}
+
+.markdown-body .highlight .vi {
+  color: teal;
+}
+
+.markdown-body .highlight .il {
+  color: #009999;
+}
+
+.markdown-body .highlight .gc {
+  color: #999;
+  background-color: #EAF2F5;
+}
+
+.markdown-body .octicon {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+</style><title>Лекция 11</title><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58022627-1', 'auto');
+  ga('send', 'pageview');
+
+</script></head><body><article class="markdown-body"><h1>
+<a id="user-content-Лекция-11" class="anchor" href="#%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-11" aria-hidden="true"><span class="octicon octicon-link"></span></a>Лекция 11</h1>
+
+<h2>
+<a id="user-content-Воздействие-ионизирующих-веществ-на-организм" class="anchor" href="#%D0%92%D0%BE%D0%B7%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D0%B5-%D0%B8%D0%BE%D0%BD%D0%B8%D0%B7%D0%B8%D1%80%D1%83%D1%8E%D1%89%D0%B8%D1%85-%D0%B2%D0%B5%D1%89%D0%B5%D1%81%D1%82%D0%B2-%D0%BD%D0%B0-%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC" aria-hidden="true"><span class="octicon octicon-link"></span></a>Воздействие ионизирующих веществ на организм</h2>
+
+<h3>
+<a id="user-content-Пути-проникновения-в-организм-внутреннее-и-внешнее-облучение" class="anchor" href="#%D0%9F%D1%83%D1%82%D0%B8-%D0%BF%D1%80%D0%BE%D0%BD%D0%B8%D0%BA%D0%BD%D0%BE%D0%B2%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2-%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC-%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B5%D0%B5-%D0%B8-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B5%D0%B5-%D0%BE%D0%B1%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Пути проникновения в организм, внутреннее и внешнее облучение.</h3>
+
+<ol>
+<li>При попадании радиоактивных аэрозолей и продуктов деления.</li>
+<li>При потреблении загрязненных продуктов питания и воды.</li>
+<li>При попадании радиоактивных веществ на кожные покровы и одежду.</li>
+</ol>
+
+<p>Облучение организма подразделяют на:</p>
+
+<ol>
+<li>
+<strong>Внешнее.</strong> Возникает в результате попадания потока частиц в организм извне. Воздействие источника внешнего облучения на организм зависит:
+
+<ol>
+<li>От энергии которую несут частицы.</li>
+<li>Величины их свободного пробега.</li>
+<li>Расстояния от источника и его активности.</li>
+<li>Времени облучения.</li>
+</ol>
+</li>
+<li>
+<strong>Внутреннее.</strong> Альфа-излучение - наибольшая опасность.</li>
+</ol>
+
+<p>Результат:</p>
+
+<ol>
+<li>Наступает кислородный голод тканей.</li>
+<li>Резко снижается иммунная защищенность организма.</li>
+<li>Ухудшается свертываемость крови.</li>
+<li>Развивается лучевая болезнь.</li>
+</ol>
+
+<p>Попадая в организм радионуклиды либо равномерно распределяются по организму либо накапливаются в органах.</p>
+
+<p>При внутреннем облучении степень поражения зависит:</p>
+
+<ol>
+<li>От количества попавших в организм радионуклидов.</li>
+<li>От их распределения по органам.</li>
+<li>От времени их естественного выведения.</li>
+</ol>
+
+<p>Эффективный период полувыведения - это время, в течении которого количество радионуклидов в органе уменьшается в 2 раза.</p>
+
+<p>Выводящими системами являются:</p>
+
+<ol>
+<li>Желудочно-кишечный тракт.</li>
+<li>Система выделения либо почки.</li>
+<li>Лёгкие.</li>
+</ol>
+
+<p>2 принципа защиты внутренней среды человека от радиации:</p>
+
+<ol>
+<li>Иметь оптимальное здоровье. </li>
+<li>Избегать вредных продуктов питания.</li>
+</ol>
+
+<h3>
+<a id="user-content-Радиочувствительность" class="anchor" href="#%D0%A0%D0%B0%D0%B4%D0%B8%D0%BE%D1%87%D1%83%D0%B2%D1%81%D1%82%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C" aria-hidden="true"><span class="octicon octicon-link"></span></a>Радиочувствительность</h3>
+
+<p><strong>Радиочувствительность</strong> - чувствительность биологических существ к действию ионизирующих излучений.</p>
+
+<p>Мерой радиочувствительности является <strong>летальная доза</strong> - доза облучения, вызывающая гибель 50% процентов облученных человек.</p>
+
+<p>Внешнее излучение создается: гамма излучение, рентгеновское и нейтронное.</p>
+
+<p>При внешнем облучении поражения органов располагается в следующей последовательности:</p>
+
+<ol>
+<li>Органы кровотворения(кровеносной системы).</li>
+<li>Костный мозг.</li>
+<li>Половые железы.</li>
+<li>Селезенка.</li>
+<li>Желудочно-кишечный тракт.</li>
+<li>Печень.</li>
+<li>Органы дыхания.</li>
+<li>Железы внутренней секреции.</li>
+<li>Органы выделения.</li>
+<li>Мышечная и соединительная ткань.</li>
+</ol>
+
+<p>От 0 до 0.2 Гр - отсутствует явное поражение.
+От 0.2 до 0.5 - возможно изменение состава крови.
+От 0.5 до 1 - изменение состава крови, усталость, слабая тошнота.
+От 1 до 2 - изменения состава крови, рвота, легкая степень лучевой болезни.
+От 2 до 4 - нетрудоспособность.
+От 4 - смертность около 50%, тяжелая степень лучевой болезни.
+От 6 - поражение ЦНС, смертность около 100%.
+От 8 - смерть неизбежна.</p>
+
+<p>Доза от 1 до 10 Гр - продолжительность жизни не больше 40 суток.</p>
+
+<p>При дозе 10-80 Гр - продолжительность около 8 суток.</p>
+
+<p>При дозе от 80-100 Гр - п.</p>
+
+<h3>
+<a id="user-content-Поглощенная-эквивалентная-эффективная-и-коллективная-дозы" class="anchor" href="#%D0%9F%D0%BE%D0%B3%D0%BB%D0%BE%D1%89%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F-%D1%8D%D0%BA%D0%B2%D0%B8%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%BD%D0%B0%D1%8F-%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%B0%D1%8F-%D0%B8-%D0%BA%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%B0%D1%8F-%D0%B4%D0%BE%D0%B7%D1%8B" aria-hidden="true"><span class="octicon octicon-link"></span></a>Поглощенная, эквивалентная, эффективная и коллективная дозы</h3>
+
+<p>В целом дозы облучения бывают:</p>
+
+<ol>
+<li>
+<strong>Однократные.</strong> Однократным облучением считается такое облучения, которое получено человеком в первые четверо суток. Однократное облучения человека дозой 100 Рад называют острым.</li>
+<li>
+<strong>Многократные.</strong> Облучения полученное за более длительный период.</li>
+</ol>
+
+<p><strong>Поглощенная доза</strong> ионизирующего облучения. Единица измерения - Грей. Внесистемная - рад.</p>
+
+<p>В повседневной жизни человек подвергается естественными и искусственными источниками облучения в малых дозах. В этих случаях биологический эффект облучения будет зависеть от суммы поглощенной энергии и вида излучения. По этой причине при оценке радиационной опасности применяют <strong>эквивалентную дозу</strong>.</p>
+
+<p><strong>Эффективная доза</strong> ионизирующего излучения - величина, используемая как мера риска возникновения отдаленных последствий облучения всего тела человека и отдельных его органов и учетом их радиочувствительности.</p>
+
+<p>Все 3 рассмотренные дозы характеризуют меру ожидаемого эффекта для одного человека.</p>
+
+<p>Для оценки меры ожидаемого эффекта при облучении большой группы людей применяют <strong>коллективную дозу</strong>. Единица измерения - ч/Зв. Внесистемная - ч/БЭР.</p>
+
+<h3>
+<a id="user-content-Радиационные-эффекты-лучевая-болезнь" class="anchor" href="#%D0%A0%D0%B0%D0%B4%D0%B8%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5-%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D1%8B-%D0%BB%D1%83%D1%87%D0%B5%D0%B2%D0%B0%D1%8F-%D0%B1%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D1%8C" aria-hidden="true"><span class="octicon octicon-link"></span></a>Радиационные эффекты, лучевая болезнь</h3>
+
+<p><strong>Радиационные эффекты</strong> это обратимые и необратимые физикохимичиские эффекты, зависящие от величины воздействия и условий облучения. В целом радиационные эффекты бывают 2-х видов:</p>
+
+<ol>
+<li>
+<strong>Соматические</strong> (детерминированные).  В их основе лежит превышение количества погибших после облучения клеток над числом образованных. Если ткань жизненно важна то в конечном итоге будет смерть. Детерминированные эффекты наблюдаются при дозах 100 рад и более.
+К детерминированным эффектам относятся:
+
+<ol>
+<li>Проявления лучевой болезни.</li>
+<li>Нарушения репродуктивной функций.</li>
+<li>Неопухолевые нарушения кожи.</li>
+<li>Сокращение продолжительности жизни.</li>
+</ol>
+</li>
+<li>
+<strong>Случайные</strong> (стохастические). Когда поврежденная клетка не гибнет, а меняется.</li>
+</ol>
+
+<p><strong>Лучевая болезнь</strong> - развивается при внешнем и внутреннем облучении. Тяжесть лучевой болезни будет зависеть от:</p>
+
+<ol>
+<li>Дозы облучения.</li>
+<li>От индивидуальных особенностей организма.</li>
+</ol>
+
+<p>Лучевая болезнь в своем течении проходит <strong>4 стадии</strong>:</p>
+
+<ol>
+<li>
+<strong>Период первичной реакции на облучение.</strong> Начинается в первые часы и длится до 3-х дней. Проявляется в:
+
+<ol>
+<li>Резкая слабость.</li>
+<li>Головная боль.</li>
+<li>Тошнота.</li>
+<li>Рвота.</li>
+<li>Понос.</li>
+<li>Бледность кожи.</li>
+<li>Колебания артериального давления.</li>
+<li>Может быть потеря сознания.</li>
+</ol>
+</li>
+<li>
+<strong>Латентный</strong> - период кажущегося улучшения. Длительность - от 2-х дней до 3-х недель. У больного остаётся небольшая слабость, потливость, снижается аппетит, нарушается сон. </li>
+<li>
+<strong>Период выраженного проявления лучевой болезни.</strong> 2-я, 3-я недели болезни. У больного повышается температура, на коже и слизистых появляются кровоизлияния, наблюдаются внутренние кровоизлияния, на слизистой оболочке рта появляются язвы. При тяжелой форме выпадают волосы, усиливается кровоточивость, усиливается свертываемость. </li>
+<li>
+<strong>Период восстановления.</strong> При легкой форме лучевой болезни на 4-й неделе здоровье восстанавливается. При средней и тяжелой формах к 4-й неделе проявления начинают затухать но выздоровления затягивается.</li>
+</ol>
+
+<p>В зависимости от дозы облучения выделяют <strong>4 степени лучевой болезни</strong>:</p>
+
+<ol>
+<li>
+<strong>Легкая.</strong> Возникает при дозах 100-200 рентген. Первичная реакция проявляется в первые 2-3 дня, через головокружение, тошноту. Латентный период около месяца. За это время идет первичное снижение признаков и полное восстановление.</li>
+<li>
+<strong>Средняя.</strong> Доза - 200 - 400 рентген. Первичная реакция наблюдается в первые 2 часа, проявляется через головокружение, тошноту и рвоту. Латентный период около 25 дней. Проявляется через изменение слизистых оболочек, инфекционные осложнения, возможен летальный исход. </li>
+<li>
+<strong>Тяжелая.</strong> Доза - 400-600 рентген. Первичная реакция в первые 60 минут, проявляется через головную боль, повторную рвоту, повышение температуры. Латентный период около 15 дней. Наблюдаются инфекционные поражения, поражения слизистых оболочек, лихорадка. Возможен летальный исход с частотой вероятности значительно выше чем при средней степени.</li>
+<li>
+<strong>Крайне тяжелая.</strong> Доза - свыше 600 рентген. Летальный исход.</li>
+</ol>
+
+<p>Лучевую болезнь подразделяют:</p>
+
+<ol>
+<li>
+<strong>Острая лучевая болезнь</strong>. Радиационное поражение человека которое развивается при однократном равномерном облучении при дозе свыше 1 Гр.</li>
+<li>При дозе менее 1 Гр может возникнуть <strong>острая лучевая травма</strong>. </li>
+<li>
+<strong>Хроническая лучевая болезнь.</strong> Результат длительного облучения небольшими дозами, которые проявляются в 2-х вариантах:
+
+<ol>
+<li>Развернутый хронический синдром.</li>
+<li>Развернутое поражение органов.</li>
+</ol>
+</li>
+</ol>
+
+<hr>
+
+<p>Период формирования. Возрастание интенсивности и накопление суммарных доз. Наблюдается развитие различных заболеваний. Нарушается фунция желез внутренней секреции. Нарушается артериальное давление.</p>
+</article></body></html>

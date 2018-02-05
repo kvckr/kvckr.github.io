@@ -1,0 +1,1379 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./theme14_files/filelist.xml">
+<link rel=Edit-Time-Data href="./theme14_files/editdata.mso">
+<link rel=OLE-Object-Data href="./theme14_files/oledata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Нахождение кратчайших путей в графе</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>X</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Bomber</o:LastAuthor>
+  <o:Revision>7</o:Revision>
+  <o:TotalTime>8</o:TotalTime>
+  <o:Created>2002-06-24T17:24:00Z</o:Created>
+  <o:LastSaved>2003-02-08T01:31:00Z</o:LastSaved>
+  <o:Pages>5</o:Pages>
+  <o:Words>1015</o:Words>
+  <o:Characters>5791</o:Characters>
+  <o:Company>X</o:Company>
+  <o:Lines>48</o:Lines>
+  <o:Paragraphs>11</o:Paragraphs>
+  <o:CharactersWithSpaces>7111</o:CharactersWithSpaces>
+  <o:Version>9.2812</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>115</w:Zoom>
+  <w:Compatibility>
+   <w:DoNotUseHTMLParagraphAutoSpacing/>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:1.0cm;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.Normal, li.Normal, div.Normal
+	{mso-style-name:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:1.0cm;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.Fomula, li.Fomula, div.Fomula
+	{mso-style-name:Fomula;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	tab-stops:center 241.0pt right 467.8pt;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.Nextnorm, li.Nextnorm, div.Nextnorm
+	{mso-style-name:Nextnorm;
+	mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:1.0cm;
+	mso-pagination:widow-orphan;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.Where, li.Where, div.Where
+	{mso-style-name:Where;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:2.0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-2.0cm;
+	mso-pagination:widow-orphan;
+	tab-stops:36.0pt;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:772554323;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1923173656 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:73.35pt;
+	mso-level-number-position:left;
+	margin-left:73.35pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1058"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU link=blue vlink=blue style='tab-interval:35.4pt'>
+
+<div class=Section1>
+
+<h1 align=center style='margin-top:12.0pt;margin-bottom:3.0pt;text-align:center'>
+<span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:14.0pt;font-family:"Times New Roman";mso-ansi-language:
+EN-US;font-weight:normal;mso-bidi-font-weight:bold'>
+<a href="../theme13/theme13.htm">[<span lang=RU style='mso-ansi-language:RU'>предыдущая тема</span>]</a>
+<a href="../../theory.htm">[<span lang=RU style='mso-ansi-language:RU'>оглавление</span>]</a>
+<a href="../theme15/theme15.htm">[<span lang=RU style='mso-ansi-language:RU'>следующая тема</span>]</a>
+<o:p></o:p></span></h1>
+
+
+<div class=MsoNormal align=center style='text-align:center;text-indent:0cm'><span
+style='font-size:12.0pt'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+<p class=Normal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=Normal align=center style='margin-top:0cm;margin-bottom:0cm;text-align:center;text-indent:18.0pt'><b
+style='mso-bidi-font-weight:normal'><span style='mso-bidi-font-size:14.0pt'>14. Нахождение кратчайших путей в графе.<o:p>
+</o:p></span></b></p>
+
+<p class=Normal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal align=left style='margin-left:64.35pt;text-align:left;
+text-indent:-18.0pt;mso-list:l2 level1 lfo7;tab-stops:list 64.35pt'><![if !supportLists]><span
+style='font-size:12.0pt;font-family:Symbol'>- </span><![endif]><span style='font-size:12.0pt;mso-bidi-font-weight:
+bold'><a href="#nagruz">нагруженный граф</a></span><o:p></o:p></p>
+
+<p class=MsoNormal align=left style='margin-left:64.35pt;text-align:left;
+text-indent:-18.0pt;mso-list:l2 level1 lfo7;tab-stops:list 64.35pt'><![if !supportLists]><span
+style='font-size:12.0pt;font-family:Symbol'>- </span><![endif]><span style='font-size:12.0pt;mso-bidi-font-weight:
+bold'><a href="#nagruz">вес дуги</a></span><o:p></o:p></p>
+
+<p class=MsoNormal align=left style='margin-left:64.35pt;text-align:left;
+text-indent:-18.0pt;mso-list:l2 level1 lfo7;tab-stops:list 64.35pt'><![if !supportLists]><span
+style='font-size:12.0pt;font-family:Symbol'>- </span><![endif]><span style='font-size:12.0pt;mso-bidi-font-weight:
+bold'><a href="#dlina">длина пути</a></span><o:p></o:p></p>
+
+<p class=MsoNormal align=left style='margin-left:64.35pt;text-align:left;
+text-indent:-18.0pt;mso-list:l2 level1 lfo7;tab-stops:list 64.35pt'><![if !supportLists]><span
+style='font-size:12.0pt;font-family:Symbol'>- </span><![endif]><span style='font-size:12.0pt;mso-bidi-font-weight:
+bold'><a href="#kratch">кратчайший путь</a></span><o:p></o:p></p>
+
+<p class=MsoNormal align=left style='margin-left:64.35pt;text-align:left;
+text-indent:-18.0pt;mso-list:l2 level1 lfo7;tab-stops:list 64.35pt'><![if !supportLists]><span
+style='font-size:12.0pt;font-family:Symbol'>- </span><![endif]><span style='font-size:12.0pt;mso-bidi-font-weight:
+bold'><a href="#zamikanie">транзитивное замыкание</a></span><o:p></o:p></p>
+
+<p class=Normal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+
+<div class=MsoNormal align=center style='margin-right:-1.0pt;text-align:center;
+text-indent:0cm'><span style='font-size:12.0pt'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+
+<p class=Normal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><a name=nagruz></a><span
+style='font-size:12.0pt'>В этом параграфе рассматриваются ориентированные графы
+</span><i style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:
+12.0pt;mso-ansi-language:EN-US'>G</span></i><span style='font-size:12.0pt'>(</span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><span style='font-size:12.0pt'>, </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>E</span></i><span style='font-size:12.0pt'>) каждой
+дуге <i style='mso-bidi-font-style:normal'>e</i></span><span style='font-size:
+12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Icirc;</span></span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>E</span></i><span style='font-size:12.0pt'> которого
+ставится в соответствие вещественное число <i style='mso-bidi-font-style:normal'>l</i>(<i
+style='mso-bidi-font-style:normal'>e</i>). Т.е. на множестве <i
+style='mso-bidi-font-style:normal'>Е</i> создана функция <i style='mso-bidi-font-style:
+normal'>l</i>:<i style='mso-bidi-font-style:normal'>E</i></span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>®</span></span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>R</span></i><span style='font-size:12.0pt'>. Такой
+граф принято называть <b><span style='mso-bidi-font-style:italic'>нагруженным</span></b>.
+Само число <i style='mso-bidi-font-style:normal'>l</i> называется <b><span
+style='mso-bidi-font-style:italic'>весом</span></b> дуги.<o:p></o:p></span></p>
+
+<p class=Nextnorm style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;
+margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Можно
+увидеть аналогию между, например, картой автомобильных или железных дорог.
+Тогда множество вершин <i style='mso-bidi-font-style:normal'>Х</i> будет
+соответствовать городам, множество дуг – магистралям, соединяющим города, а
+веса – расстояниям. (На практике, при этом, фактически получится
+неориентированный граф).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>В
+связи с изложенной аналогией будем называть веса дуг расстояниями.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><a name=dlina></a><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'>Определение </span></i><span
+style='font-size:12.0pt'>1. Пусть имеется последовательность вершин <i
+style='mso-bidi-font-style:normal'>x</i><sub>0</sub>, <i style='mso-bidi-font-style:
+normal'>x</i><sub>1</sub>, …, </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x<sub>n</sub></span></i><span
+style='font-size:12.0pt'>, которая определяет путь в нагруженном графе </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>G</span></i><span style='font-size:12.0pt'>(</span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><span style='font-size:12.0pt'>, </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>E</span></i><span style='font-size:12.0pt'>); тогда <b><span
+style='mso-bidi-font-style:italic'>длина</span></b> этого пути определяется как
+<sub><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1026" type="#_x0000_t75" style='width:69.75pt;
+ height:39pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme14_files/image001.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=93 height=52
+src="./theme14_files/image002.gif" v:shapes="_x0000_i1026"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1026"
+  DrawAspect="Content" ObjectID="_1106180338">
+ </o:OLEObject>
+</xml><![endif]-->.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><a name=kratch></a><span
+style='font-size:12.0pt'>Естественный интерес представляет нахождение <b><span
+style='mso-bidi-font-style:italic'>кратчайшего</span></b> пути между двумя
+заданными вершинами </span><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:
+EN-US'>x</span><span lang=EN-US style='font-size:12.0pt'> </span><span
+style='font-size:12.0pt'>и </span><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>y</span><span style='font-size:12.0pt'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><i style='mso-bidi-font-style:
+normal'><span style='font-size:12.0pt'>Алгоритм Форда отыскания кратчайшего
+пути.<o:p></o:p></span></i></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Будем
+предполагать, что все расстояния в графе положительны. (Если это не так, то ко
+всем весам можно всегда добавить такую константу, что все эти веса станут
+положительными).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Пусть
+мы ищем путь от вершины <i style='mso-bidi-font-style:normal'>x</i><sub>0</sub>
+к вершине <i style='mso-bidi-font-style:normal'>x<sub>n</sub></i>. Будем каждой
+вершине <i style='mso-bidi-font-style:normal'>x<sub>i</sub></i> ставить в
+соответствие некоторое число </span><span style='font-size:12.0pt;font-family:
+Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-char-type:symbol;mso-symbol-font-family:Symbol'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Symbol'>l</span></span><i style='mso-bidi-font-style:
+normal'><sub><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>i</span></sub></i><span
+style='font-size:12.0pt'> по следующим правилам.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>1</span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>°</span></span><span
+style='font-size:12.0pt'> Положим </span><span style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>l</span></span><sub><span
+style='font-size:12.0pt'>0</span></sub><span style='font-size:12.0pt'>= 0, </span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>l</span></span><i
+style='mso-bidi-font-style:normal'><sub><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>i</span></sub></i><i style='mso-bidi-font-style:normal'><sub><span
+lang=EN-US style='font-size:12.0pt'> </span></sub></i><span style='font-size:
+12.0pt'>= </span><span lang=EN-US style='font-size:12.0pt;font-family:Symbol;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-ansi-language:EN-US;mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&yen;</span></span><span
+style='font-size:12.0pt'> (достаточно большое число) для </span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&quot;</span></span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>i</span></i><span style='font-size:12.0pt'> &gt; 0.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>2</span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>°</span></span><span
+style='font-size:12.0pt'> Ищем в графе дугу (</span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x<sub>i</sub></span></i><span
+style='font-size:12.0pt'>, </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x<sub>j</sub></span></i><span
+style='font-size:12.0pt'>) удовлетворяющую следующему условию<o:p></o:p></span></p>
+
+<p class=Fomula align=center style='margin-top:0cm;margin-right:30.0pt;
+margin-bottom:0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>l</span></span><i
+style='mso-bidi-font-style:normal'><sub><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>j</span></sub></i><span lang=EN-US style='font-size:
+12.0pt;mso-ansi-language:EN-US'> - </span><span style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>l</span></span><i
+style='mso-bidi-font-style:normal'><sub><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>i</span></sub></i><span lang=EN-US style='font-size:
+12.0pt;mso-ansi-language:EN-US'> &gt; <i style='mso-bidi-font-style:normal'>l</i>(<i
+style='mso-bidi-font-style:normal'>x<sub>i</sub></i>, <i style='mso-bidi-font-style:
+normal'>x<sub>j</sub></i>),<span style='mso-tab-count:1'>                                          </span>(9.1)<o:p></o:p></span></p>
+
+<p class=Where align=left style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-align:left;text-indent:0cm'><span
+style='font-size:12.0pt'>после чего заменяем </span><span style='font-size:
+12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>l</span></span><i
+style='mso-bidi-font-style:normal'><sub><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>j</span></sub></i><span style='font-size:12.0pt'> на<o:p></o:p></span></p>
+
+<p class=Fomula style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;
+margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'><span
+style='mso-tab-count:1'>                                                      </span></span><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'><sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1027" type="#_x0000_t75" style='width:102.75pt;height:21pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme14_files/image003.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=137 height=28
+src="./theme14_files/image004.gif" v:shapes="_x0000_i1027"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1027"
+  DrawAspect="Content" ObjectID="_1106180339">
+ </o:OLEObject>
+</xml><![endif]--></span><span style='font-size:12.0pt'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Пункт
+2</span><span style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;
+mso-symbol-font-family:Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:
+Symbol'>°</span></span><sup><span style='font-size:12.0pt'> </span></sup><span
+style='font-size:12.0pt'>повторяется до тех пор, пока невозможно будет найти
+дугу, удовлетворяющую условию (1). Обоснуем этот алгоритм и укажем как
+определяется кратчайший путь.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Отметим,
+что </span><span style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;
+mso-symbol-font-family:Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:
+Symbol'>l</span></span><i style='mso-bidi-font-style:normal'><sub><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>n</span></sub></i><span
+style='font-size:12.0pt'> монотонно уменьшается, то после завершения алгоритма
+найдется дуга </span><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:
+EN-US'><i style='mso-bidi-font-style:normal'><sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1028" type="#_x0000_t75" style='width:69.75pt;height:21pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme14_files/image005.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=93 height=28
+src="./theme14_files/image006.gif" v:shapes="_x0000_i1028"><![endif]></sub></i><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1028"
+  DrawAspect="Content" ObjectID="_1106180340">
+ </o:OLEObject>
+</xml><![endif]--></span><span style='font-size:12.0pt'>, такая, что <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1029" type="#_x0000_t75" style='width:114pt;height:21pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme14_files/image007.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=152 height=28
+src="./theme14_files/image008.gif" v:shapes="_x0000_i1029"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1029"
+  DrawAspect="Content" ObjectID="_1106180341">
+ </o:OLEObject>
+</xml><![endif]--><span style="mso-spacerun: yes"> </span>для которой последний
+раз уменьшалось </span><span style='font-size:12.0pt;font-family:Symbol;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-char-type:symbol;mso-symbol-font-family:Symbol'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Symbol'>l</span></span><i style='mso-bidi-font-style:
+normal'><sub><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>n</span></sub></i><span
+style='font-size:12.0pt'>. (Иначе вообще нет пути между <i style='mso-bidi-font-style:
+normal'>x</i><sub>0</sub> и <i style='mso-bidi-font-style:normal'>x<sub>n</sub></i>
+или для <sub><!--[if gte vml 1]><v:shape id="_x0000_i1030" type="#_x0000_t75"
+ style='width:50.25pt;height:21pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme14_files/image009.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=67 height=28
+src="./theme14_files/image010.gif" v:shapes="_x0000_i1030"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1030"
+  DrawAspect="Content" ObjectID="_1106180342">
+ </o:OLEObject>
+</xml><![endif]--><span style="mso-spacerun: yes"> </span>верно (1)).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>По
+этой же самой причине найдется вершина </span><i style='mso-bidi-font-style:
+normal'><sub><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1031" type="#_x0000_t75" style='width:21pt;height:21pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme14_files/image011.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=28 height=28
+src="./theme14_files/image012.gif" v:shapes="_x0000_i1031"><![endif]></span></sub></i><span
+style='font-size:12.0pt'><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1031"
+  DrawAspect="Content" ObjectID="_1106180343">
+ </o:OLEObject>
+</xml><![endif]-->, такая , что<o:p></o:p></span></p>
+
+<p class=Fomula style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;
+margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'><span
+style='mso-tab-count:1'>                                                  </span><sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1032" type="#_x0000_t75" style='width:126.75pt;height:21pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme14_files/image013.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=169 height=28
+src="./theme14_files/image014.gif" v:shapes="_x0000_i1032"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1032"
+  DrawAspect="Content" ObjectID="_1106180344">
+ </o:OLEObject>
+</xml><![endif]-->,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:0cm'><span
+style='font-size:12.0pt'>этот процесс может продолжаться и дальше, так что
+получится строго убыва­ю­щая последовательность <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1033" type="#_x0000_t75" style='width:80.25pt;height:21pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme14_files/image015.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=107 height=28
+src="./theme14_files/image016.gif" v:shapes="_x0000_i1033"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1033"
+  DrawAspect="Content" ObjectID="_1106180345">
+ </o:OLEObject>
+</xml><![endif]--><span style="mso-spacerun: yes"> </span>. Отсюда следует, что
+при некото­ром <i style='mso-bidi-font-style:normal'>k</i> мы получим <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1034" type="#_x0000_t75" style='width:56.25pt;height:21pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme14_files/image017.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=75 height=28
+src="./theme14_files/image018.gif" v:shapes="_x0000_i1034"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1034"
+  DrawAspect="Content" ObjectID="_1106180346">
+ </o:OLEObject>
+</xml><![endif]-->.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Покажем,
+что <sub><!--[if gte vml 1]><v:shape id="_x0000_i1035" type="#_x0000_t75"
+ style='width:87pt;height:21pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme14_files/image019.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=116 height=28
+src="./theme14_files/image020.gif" v:shapes="_x0000_i1035"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1035"
+  DrawAspect="Content" ObjectID="_1106180347">
+ </o:OLEObject>
+</xml><![endif]--><span style="mso-spacerun: yes"> </span>– минимальный путь с
+длиной </span><span style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;
+mso-symbol-font-family:Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:
+Symbol'>l</span></span><i style='mso-bidi-font-style:normal'><sub><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>n</span></sub></i><span
+style='font-size:12.0pt'>, т.е. длина любого другого пути между <i
+style='mso-bidi-font-style:normal'>x</i><sub>0</sub> и <i style='mso-bidi-font-style:
+normal'>x<sub>n</sub></i> не превышает </span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>k<sub>n</sub></span></i><span
+style='font-size:12.0pt'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Возьмем
+произвольный путь <sub><!--[if gte vml 1]><v:shape id="_x0000_i1036" type="#_x0000_t75"
+ style='width:147pt;height:21pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme14_files/image021.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=196 height=28
+src="./theme14_files/image022.gif" v:shapes="_x0000_i1036"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1036"
+  DrawAspect="Content" ObjectID="_1106180348">
+ </o:OLEObject>
+</xml><![endif]--><span style="mso-spacerun: yes">  </span>и рассмотрим его
+длину <sub><!--[if gte vml 1]><v:shape id="_x0000_i1037" type="#_x0000_t75"
+ style='width:123.75pt;height:21pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme14_files/image023.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=165 height=28
+src="./theme14_files/image024.gif" v:shapes="_x0000_i1037"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1037"
+  DrawAspect="Content" ObjectID="_1106180349">
+ </o:OLEObject>
+</xml><![endif]-->.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>После
+завершения алгоритма имеем следующие соотношения<o:p></o:p></span></p>
+
+<p class=Fomula style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;
+margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'><span
+style='mso-tab-count:1'>                                                  </span></span><sub><span
+style='font-size:12.0pt'><!--[if gte vml 1]><v:shape id="_x0000_i1038" type="#_x0000_t75"
+ style='width:129.75pt;height:89.25pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme14_files/image025.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=173 height=119
+src="./theme14_files/image026.gif" v:shapes="_x0000_i1038"><![endif]></span></sub><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1038"
+  DrawAspect="Content" ObjectID="_1106180350">
+ </o:OLEObject>
+</xml><![endif]--></span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Сложив
+все эти неравенства, получим<o:p></o:p></span></p>
+
+<p class=Fomula style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;
+margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'><span
+style='mso-tab-count:1'>                                           </span></span><sub><span
+style='font-size:12.0pt'><!--[if gte vml 1]><v:shape id="_x0000_i1039" type="#_x0000_t75"
+ style='width:165pt;height:21pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme14_files/image027.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=220 height=28
+src="./theme14_files/image028.gif" v:shapes="_x0000_i1039"><![endif]></span></sub><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1039"
+  DrawAspect="Content" ObjectID="_1106180351">
+ </o:OLEObject>
+</xml><![endif]--></span><span style='font-size:12.0pt'>,<o:p></o:p></span></p>
+
+<p class=Fomula style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;
+margin-left:27.0pt;margin-bottom:.0001pt;tab-stops:35.4pt center 241.0pt right 467.8pt'><span
+style='font-size:12.0pt'>что и требовалось доказать.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Рассмотрим
+пример.<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:0cm;margin-right:30.0pt;
+margin-bottom:0cm;margin-left:9.0pt;margin-bottom:.0001pt;text-align:center;
+text-indent:0cm'><span style='font-size:12.0pt'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1040" type="#_x0000_t75" style='width:427.5pt;height:129.75pt'
+ o:ole="" fillcolor="window">
+ <v:imagedata src="./theme14_files/image029.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=570 height=173
+src="./theme14_files/image030.gif" v:shapes="_x0000_i1040"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Word.Picture.8" ShapeID="_x0000_i1040"
+  DrawAspect="Content" ObjectID="_1106180352">
+ </o:OLEObject>
+</xml><![endif]-->а<span style='mso-tab-count:3'>                             </span><span
+style='mso-tab-count:4'>                                            </span>б<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:0cm;margin-right:30.0pt;
+margin-bottom:0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-align:center;
+text-indent:0cm'><span style='font-size:12.0pt'>Рис. 10.1<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>На
+рис. 10.1а изображен исходный помеченный граф и начальные значения </span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>l</span></span><i
+style='mso-bidi-font-style:normal'><sub><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>i</span></sub></i><span style='font-size:12.0pt'>. На рис.
+10.1,б для того же графа указаны конечные значения </span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>l</span></span><i
+style='mso-bidi-font-style:normal'><sub><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>i</span></sub></i><span style='font-size:12.0pt'> и
+выделен кратчайший путь. Пометка вершин графа происходила в следующем порядке
+(в скобках указана дуга, вдоль которой выполняется (1)):<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>l</span></span><sub><span
+style='font-size:12.0pt'>1</span></sub><span style='font-size:12.0pt'> = 6<span
+style="mso-spacerun: yes">        </span>(</span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x</span></i><sub><span
+style='font-size:12.0pt'>0</span></sub><span style='font-size:12.0pt'>, </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x</span></i><sub><span style='font-size:12.0pt'>1</span></sub><span
+style='font-size:12.0pt'>),<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>l</span></span><sub><span
+style='font-size:12.0pt'>2</span></sub><span style='font-size:12.0pt'> = 7<span
+style="mso-spacerun: yes">        </span>(</span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x</span></i><sub><span
+style='font-size:12.0pt'>0</span></sub><span style='font-size:12.0pt'>, </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x</span></i><sub><span style='font-size:12.0pt'>2</span></sub><span
+style='font-size:12.0pt'>),<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>l</span></span><sub><span
+style='font-size:12.0pt'>3</span></sub><span style='font-size:12.0pt'> = 6<span
+style="mso-spacerun: yes">      </span><span style="mso-spacerun:
+yes">  </span>(</span><i style='mso-bidi-font-style:normal'><span lang=EN-US
+style='font-size:12.0pt;mso-ansi-language:EN-US'>x</span></i><sub><span
+style='font-size:12.0pt'>0</span></sub><span style='font-size:12.0pt'>, </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x</span></i><sub><span style='font-size:12.0pt'>3</span></sub><span
+style='font-size:12.0pt'>),<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>l</span></span><sub><span
+style='font-size:12.0pt'>4</span></sub><span style='font-size:12.0pt'> =
+12<span style="mso-spacerun: yes">      </span>(</span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x</span></i><sub><span
+style='font-size:12.0pt'>1</span></sub><span style='font-size:12.0pt'>, </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x</span></i><sub><span style='font-size:12.0pt'>3</span></sub><span
+style='font-size:12.0pt'>),<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>l</span></span><sub><span
+style='font-size:12.0pt'>4</span></sub><span style='font-size:12.0pt'> =
+11<span style="mso-spacerun: yes">      </span>(</span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x</span></i><sub><span
+style='font-size:12.0pt'>2</span></sub><span style='font-size:12.0pt'>, </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x</span></i><sub><span style='font-size:12.0pt'>4</span></sub><span
+style='font-size:12.0pt'>),<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>l</span></span><sub><span
+style='font-size:12.0pt'>5</span></sub><span style='font-size:12.0pt'> =
+16<span style="mso-spacerun: yes">      </span>(</span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x</span></i><sub><span
+style='font-size:12.0pt'>3</span></sub><span style='font-size:12.0pt'>, </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x</span></i><sub><span style='font-size:12.0pt'>4</span></sub><span
+style='font-size:12.0pt'>),<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>l</span></span><sub><span
+style='font-size:12.0pt'>5</span></sub><span style='font-size:12.0pt'> =
+15<span style="mso-spacerun: yes">      </span>(</span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x</span></i><sub><span
+style='font-size:12.0pt'>4</span></sub><span style='font-size:12.0pt'>, </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x</span></i><sub><span style='font-size:12.0pt'>5</span></sub><span
+style='font-size:12.0pt'>),<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>l</span></span><sub><span
+style='font-size:12.0pt'>6</span></sub><span style='font-size:12.0pt'> =
+18<span style="mso-spacerun: yes">      </span>(</span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x</span></i><sub><span
+style='font-size:12.0pt'>4</span></sub><span style='font-size:12.0pt'>, </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x</span></i><sub><span style='font-size:12.0pt'>6</span></sub><span
+style='font-size:12.0pt'>),<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>l</span></span><sub><span
+style='font-size:12.0pt'>6</span></sub><span style='font-size:12.0pt'> =
+17<span style="mso-spacerun: yes">      </span>(</span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x</span></i><sub><span
+style='font-size:12.0pt'>5</span></sub><span style='font-size:12.0pt'>, </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x</span></i><sub><span style='font-size:12.0pt'>6</span></sub><span
+style='font-size:12.0pt'>).<o:p></o:p></span></p>
+
+<p class=Nextnorm style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;
+margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Иногда
+возникает задача отыскания кратчайших расстояний между всеми парами вершин.
+Одним из способов решения этой задачи является<o:p></o:p></span></p>
+
+<h1 style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;margin-left:
+27.0pt;margin-bottom:.0001pt'><a name="_Toc436464399"></a><a
+name="_Toc436464244"></a><a name="_Toc436463684"><span style='mso-bookmark:
+_Toc436464244'><span style='mso-bookmark:_Toc436464399'><span style='font-size:
+12.0pt'>Алгоритм Флойда</span></span></span></a><span style='font-size:12.0pt'><o:p></o:p></span></h1>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Обозначим
+<i style='mso-bidi-font-style:normal'>l<sub>ij</sub></i> длину дуги (</span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x<sub>i</sub></span></i><span style='font-size:12.0pt'>,
+</span><i style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:
+12.0pt;mso-ansi-language:EN-US'>x<sub>j</sub></span></i><span style='font-size:
+12.0pt'>), если таковой не существует примем <i style='mso-bidi-font-style:
+normal'>l<sub>ij</sub></i> = </span><span lang=EN-US style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&yen;</span></span><span
+style='font-size:12.0pt'>, кроме того, положим <i style='mso-bidi-font-style:
+normal'>l<sub>ii</sub></i> = 0. Обозначим <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1041" type="#_x0000_t75" style='width:27pt;height:24pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme14_files/image031.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=36 height=32
+src="./theme14_files/image032.gif" v:shapes="_x0000_i1041"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1041"
+  DrawAspect="Content" ObjectID="_1106180353">
+ </o:OLEObject>
+</xml><![endif]--><span style="mso-spacerun: yes"> </span>длину кратчайшего из
+путей из <i style='mso-bidi-font-style:normal'>x<sub>i</sub></i><span
+style="mso-spacerun: yes">  </span>в <i style='mso-bidi-font-style:normal'>x<sub>j</sub></i>
+с промежуточными вершинами из множества </span><span style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>{</span></span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x</span></i><sub><span style='font-size:12.0pt'>1</span></sub><span
+style='font-size:12.0pt'>, …, </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x<sub>m</sub></span></i><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>}</span></span><span
+style='font-size:12.0pt'>. Тогда можно получить следующие уравнения<o:p></o:p></span></p>
+
+<p class=Fomula align=right style='margin-top:0cm;margin-right:30.0pt;
+margin-bottom:0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-align:right'><span
+style='font-size:12.0pt'><span style='mso-tab-count:1'>                                                                      </span></span><!--[if gte vml 1]><v:shape
+ id="_x0000_s1026" type="#_x0000_t75" style='position:absolute;left:0;
+ text-align:left;margin-left:0;margin-top:1.4pt;width:48.75pt;height:24pt;
+ z-index:1;mso-position-horizontal:center;mso-position-horizontal-relative:text;
+ mso-position-vertical-relative:text' o:allowincell="f" fillcolor="window">
+ <v:imagedata src="./theme14_files/image033.wmz" o:title=""/>
+ <w:wrap anchorx="page"/>
+</v:shape><![if gte mso 9]><o:OLEObject Type="Embed" ProgID="Equation.3"
+ ShapeID="_x0000_s1026" DrawAspect="Content" ObjectID="_1106180354">
+</o:OLEObject>
+<![endif]><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:0;left:0px;margin-left:0px;margin-top:2px;width:65px;
+height:32px'><img width=65 height=32 src="./theme14_files/image034.gif"
+v:shapes="_x0000_s1026"></span><![endif]><span style="mso-spacerun:
+yes"> </span><span style='font-size:12.0pt'>,<span style='mso-tab-count:1'>                                                                   </span>(9.2)<o:p></o:p></span></p>
+
+<p class=Fomula style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;
+margin-left:27.0pt;margin-bottom:.0001pt'><span lang=EN-US style='font-size:
+12.0pt;mso-ansi-language:EN-US'>&nbsp;</span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=Fomula align=right style='margin-top:0cm;margin-right:30.0pt;
+margin-bottom:0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-align:right'><span
+style='font-size:12.0pt'><span style='mso-tab-count:1'>                                                                      </span></span><!--[if gte vml 1]><v:shape
+ id="_x0000_s1027" type="#_x0000_t75" style='position:absolute;left:0;
+ text-align:left;margin-left:0;margin-top:1.4pt;width:174.75pt;height:24pt;
+ z-index:2;mso-position-horizontal:center;mso-position-horizontal-relative:text;
+ mso-position-vertical-relative:text' o:allowincell="f" fillcolor="window">
+ <v:imagedata src="./theme14_files/image035.wmz" o:title=""/>
+ <w:wrap anchorx="page"/>
+</v:shape><![if gte mso 9]><o:OLEObject Type="Embed" ProgID="Equation.3"
+ ShapeID="_x0000_s1027" DrawAspect="Content" ObjectID="_1106180355">
+</o:OLEObject>
+<![endif]><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:1;left:0px;margin-left:0px;margin-top:2px;width:233px;
+height:32px'><img width=233 height=32 src="./theme14_files/image036.gif"
+v:shapes="_x0000_s1027"></span><![endif]><span style="mso-spacerun:
+yes"> </span><span style='font-size:12.0pt'>.<span style='mso-tab-count:1'>                                                                   </span>(9.3)<o:p></o:p></span></p>
+
+<p class=Fomula style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;
+margin-left:27.0pt;margin-bottom:.0001pt'><span lang=EN-US style='font-size:
+12.0pt;mso-ansi-language:EN-US'>&nbsp;</span><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Уравнение
+(9.2) очевидно. Обоснуем уравнение (9.3). Рассмотрим кратчай­ший путь из <i
+style='mso-bidi-font-style:normal'>x<sub>i</sub></i> в <i style='mso-bidi-font-style:
+normal'>x<sub>j</sub></i> с промежуточными вершинами из множества </span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>{</span></span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x</span></i><sub><span style='font-size:12.0pt'>1</span></sub><span
+style='font-size:12.0pt'>, …, </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x<sub>m</sub></span></i><span
+style='font-size:12.0pt'>, </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x<sub>m</sub></span></i><sub><span
+style='font-size:12.0pt'>+1</span></sub><span style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>}</span></span><span
+style='font-size:12.0pt'>. Если этот путь не содержит </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x<sub>m</sub></span></i><sub><span style='font-size:
+12.0pt'>+1</span></sub><span style='font-size:12.0pt'>, то <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1044" type="#_x0000_t75" style='width:74.25pt;height:24pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme14_files/image037.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=99 height=32
+src="./theme14_files/image038.gif" v:shapes="_x0000_i1044"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1044"
+  DrawAspect="Content" ObjectID="_1106180356">
+ </o:OLEObject>
+</xml><![endif]-->. Если же он содержит </span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x<sub>m</sub></span></i><sub><span
+style='font-size:12.0pt'>+1</span></sub><span style='font-size:12.0pt'>,
+то<span style="mso-spacerun: yes">  </span>деля путь на отрезки от <i
+style='mso-bidi-font-style:normal'>x<sub>i</sub></i> до </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x<sub>m</sub></span></i><sub><span style='font-size:
+12.0pt'>+1</span></sub><span style='font-size:12.0pt'> и от </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x<sub>m</sub></span></i><sub><span style='font-size:
+12.0pt'>+1</span></sub><span style='font-size:12.0pt'> до <i style='mso-bidi-font-style:
+normal'>x<sub>j</sub></i>, получаем равенство <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1045" type="#_x0000_t75" style='width:110.25pt;height:24pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme14_files/image039.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=147 height=32
+src="./theme14_files/image040.gif" v:shapes="_x0000_i1045"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1045"
+  DrawAspect="Content" ObjectID="_1106180357">
+ </o:OLEObject>
+</xml><![endif]-->.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Уравнения
+(9.2) и (9.3) позволяют легко вычислить матрицу расстояний </span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>[</span></span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>d<sub>ij</sub></span></i><span style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>]</span></span><span
+style='font-size:12.0pt'> между всеми парами вершин графа <i style='mso-bidi-font-style:
+normal'>G</i>(<i style='mso-bidi-font-style:normal'>X</i>, <i style='mso-bidi-font-style:
+normal'>E</i>). На первом этапе согласно (9.2) составляем <i style='mso-bidi-font-style:
+normal'>n</i></span><span style='font-size:12.0pt;font-family:Symbol;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-char-type:symbol;mso-symbol-font-family:Symbol'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Symbol'>&acute;</span></span><i style='mso-bidi-font-style:
+normal'><span style='font-size:12.0pt'>n</span></i><span style='font-size:12.0pt'>
+матрицу <sub><!--[if gte vml 1]><v:shape id="_x0000_i1046" type="#_x0000_t75"
+ style='width:33.75pt;height:24pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme14_files/image041.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=45 height=32
+src="./theme14_files/image042.gif" v:shapes="_x0000_i1046"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1046"
+  DrawAspect="Content" ObjectID="_1106180358">
+ </o:OLEObject>
+</xml><![endif]--><span style="mso-spacerun: yes"> </span>равную матрице </span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>[</span></span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>l<sub>ij</sub></span></i><span style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>]</span></span><span
+style='font-size:12.0pt'><span style="mso-spacerun: yes">  </span>весов ребер (</span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>n</span></i><span style='font-size:12.0pt'> – число
+вершин <i style='mso-bidi-font-style:normal'>G</i>(<i style='mso-bidi-font-style:
+normal'>X</i>, <i style='mso-bidi-font-style:normal'>E</i>)). <i
+style='mso-bidi-font-style:normal'>n</i> раз производим вычисление по
+итерационной формуле (9.3), после чего имеем <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1047" type="#_x0000_t75" style='width:33.75pt;height:24pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme14_files/image043.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=45 height=32
+src="./theme14_files/image044.gif" v:shapes="_x0000_i1047"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1047"
+  DrawAspect="Content" ObjectID="_1106180359">
+ </o:OLEObject>
+</xml><![endif]--><span style="mso-spacerun: yes"> </span>– матрицу расстояний.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Отметим,
+что алгоритм Флойда непосредственно не указывает сам кратчайший путь между
+вершинами, а только его длину. Алгоритм Флойда можно модифицировать таким
+образом, чтобы можно было находить и сами пути. Для этого получим
+вспомогательную матрицу </span><span style='font-size:12.0pt;font-family:Symbol;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-char-type:symbol;mso-symbol-font-family:Symbol'><span style='mso-char-type:
+symbol;mso-symbol-font-family:Symbol'>[</span></span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>R<sub>ij</sub></span></i><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>]</span></span><span
+style='font-size:12.0pt'>, которая будет содержать наибольший номер вершины
+некоторого кратчайшего пути из x<i style='mso-bidi-font-style:normal'><sub>i</sub></i>
+в x<i style='mso-bidi-font-style:normal'><sub>j</sub></i> (</span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>R<sub>ij</sub></span></i><span style='font-size:12.0pt'>=0,
+если этот путь не содержит промежуточных вершин).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Эта
+матрица вычисляется параллельно с <sub><!--[if gte vml 1]><v:shape id="_x0000_i1048"
+ type="#_x0000_t75" style='width:35.25pt;height:24pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme14_files/image045.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=47 height=32
+src="./theme14_files/image046.gif" v:shapes="_x0000_i1048"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1048"
+  DrawAspect="Content" ObjectID="_1106180360">
+ </o:OLEObject>
+</xml><![endif]--><span style="mso-spacerun: yes"> </span>по следующим правилам<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><sub><span style='font-size:12.0pt'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1049" type="#_x0000_t75" style='width:48pt;height:24pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme14_files/image047.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=64 height=32
+src="./theme14_files/image048.gif" v:shapes="_x0000_i1049"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1049"
+  DrawAspect="Content" ObjectID="_1106180361">
+ </o:OLEObject>
+</xml><![endif]--></span></sub><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><sub><span style='font-size:12.0pt'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1050" type="#_x0000_t75" style='width:248.25pt;height:51pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme14_files/image049.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=331 height=68
+src="./theme14_files/image050.gif" v:shapes="_x0000_i1050"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1050"
+  DrawAspect="Content" ObjectID="_1106180362">
+ </o:OLEObject>
+</xml><![endif]--></span></sub><sub><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'><!--[if gte vml 1]><v:shape id="_x0000_i1051" type="#_x0000_t75"
+ style='width:9.75pt;height:18.75pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme14_files/image051.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=13 height=25
+src="./theme14_files/image052.gif" v:shapes="_x0000_i1051"><![endif]></span></sub><sub><span
+style='font-size:12.0pt'><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1051"
+  DrawAspect="Content" ObjectID="_1106180363">
+ </o:OLEObject>
+</xml><![endif]--></span></sub><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Последнее
+выражение следует из обоснования (9.3).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Теперь
+кратчайший путь выписывается из следующего рекурсивного алгоритма:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Кратчайший
+путь из </span><i style='mso-bidi-font-style:normal'><span lang=EN-US
+style='font-size:12.0pt;mso-ansi-language:EN-US'>x<sub>i</sub></span></i><span
+style='font-size:12.0pt'> в <i style='mso-bidi-font-style:normal'><u>x<sub>j</sub></u></i>:<o:p></o:p></span></p>
+
+<p class=Nextnorm style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;
+margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>1</span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>°</span></span><span
+style='font-size:12.0pt'>. Если<span style="mso-spacerun: yes">    </span></span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>R<sub>ij</sub></span></i><span lang=EN-US
+style='font-size:12.0pt'> </span><span style='font-size:12.0pt'>= 0 <span
+style='mso-tab-count:1'>           </span>то выполнить 2</span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>°</span></span><span
+style='font-size:12.0pt'>,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:36.0pt'><span
+style='font-size:12.0pt'>иначе выполнить 3</span><span style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>°</span></span><span
+style='font-size:12.0pt'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>2</span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>°</span></span><span
+style='font-size:12.0pt'>. Если <span style="mso-spacerun: yes">      </span><i
+style='mso-bidi-font-style:normal'>i</i>=<i style='mso-bidi-font-style:normal'>j</i>
+<span style='mso-tab-count:1'>  </span>то выписать <i style='mso-bidi-font-style:
+normal'>x<sub>i</sub></i> и закончить,<o:p></o:p></span></p>
+
+<p class=Nextnorm style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;
+margin-left:27.0pt;margin-bottom:.0001pt;text-indent:36.0pt'><span
+style='font-size:12.0pt'>иначе выписать <i style='mso-bidi-font-style:normal'>x<sub>i</sub></i>
+и </span><i style='mso-bidi-font-style:normal'><span lang=EN-US
+style='font-size:12.0pt;mso-ansi-language:EN-US'>x<sub>j</sub></span></i><span
+lang=EN-US style='font-size:12.0pt'> </span><span style='font-size:12.0pt'>закончить.<o:p></o:p></span></p>
+
+<p class=Nextnorm style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;
+margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>3</span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>°</span></span><span
+style='font-size:12.0pt'>. Выписать кратчайший путь между <i style='mso-bidi-font-style:
+normal'>x<sub>i</sub></i> и <sub><!--[if gte vml 1]><v:shape id="_x0000_i1052"
+ type="#_x0000_t75" style='width:21.75pt;height:23.25pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme14_files/image053.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=29 height=31
+src="./theme14_files/image054.gif" v:shapes="_x0000_i1052"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1052"
+  DrawAspect="Content" ObjectID="_1106180364">
+ </o:OLEObject>
+</xml><![endif]-->.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>4</span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>°</span></span><span
+style='font-size:12.0pt'>. Выписать кратчайший путь между <sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1053" type="#_x0000_t75" style='width:21.75pt;height:23.25pt'
+ o:ole="" fillcolor="window">
+ <v:imagedata src="./theme14_files/image053.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=29 height=31
+src="./theme14_files/image055.gif" v:shapes="_x0000_i1053"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1053"
+  DrawAspect="Content" ObjectID="_1106180365">
+ </o:OLEObject>
+</xml><![endif]--><span style="mso-spacerun: yes"> </span>и <i
+style='mso-bidi-font-style:normal'>x<sub>j</sub></i>.<o:p></o:p></span></p>
+
+<p class=Nextnorm style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;
+margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Пункты
+3</span><span style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;
+mso-symbol-font-family:Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:
+Symbol'>°</span></span><span style='font-size:12.0pt'> и 4</span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>°</span></span><span
+style='font-size:12.0pt'> предполагают рекурсивное обращение к рассмотренному
+алгоритму.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>С задачей
+определения кратчайших путей в графе тесно связана задача транзитивного
+замыкания бинарного отношения.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Напомним,
+что бинарным отношением на множестве <i style='mso-bidi-font-style:normal'>Х</i>
+называется произвольное подмножество <i style='mso-bidi-font-style:normal'>E </i></span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Igrave;</span></span><span
+style='font-size:12.0pt'> <i style='mso-bidi-font-style:normal'>X</i> </span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&acute;</span></span><span
+style='font-size:12.0pt'> <i style='mso-bidi-font-style:normal'>X</i>.<o:p></o:p></span></p>
+
+<p class=Nextnorm style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;
+margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Транзитивным
+называется отношение, удовлетворяющее следующему условию: если<span
+style="mso-spacerun: yes">  </span>(</span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x</span></i><span
+style='font-size:12.0pt'>, </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>y</span></i><span
+style='font-size:12.0pt'>) </span><span lang=EN-US style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Icirc;</span></span><span
+lang=EN-US style='font-size:12.0pt'> </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>E</span></i><span
+lang=EN-US style='font-size:12.0pt'> </span><span style='font-size:12.0pt'>и<span
+style="mso-spacerun: yes">  </span>(</span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>y</span></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'>, </span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>z</span></i><span style='font-size:12.0pt'>) </span><span
+lang=EN-US style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-ansi-language:
+EN-US;mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Icirc;</span></span><span
+lang=EN-US style='font-size:12.0pt'> </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>E</span></i><span
+style='font-size:12.0pt'>, то (</span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x</span></i><i
+style='mso-bidi-font-style:normal'><span style='font-size:12.0pt'>, </span></i><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>z</span></i><span style='font-size:12.0pt'>) </span><span
+lang=EN-US style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:
+"Times New Roman";mso-hansi-font-family:"Times New Roman";mso-ansi-language:
+EN-US;mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Icirc;</span></span><span
+lang=EN-US style='font-size:12.0pt'> </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>E</span></i><span
+style='font-size:12.0pt'> для всех<span style="mso-spacerun: yes">   </span><i
+style='mso-bidi-font-style:normal'>x</i>, <i style='mso-bidi-font-style:normal'>y</i>,
+<i style='mso-bidi-font-style:normal'>z</i> </span><span style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Icirc;</span></span><span
+style='font-size:12.0pt'> <i style='mso-bidi-font-style:normal'>X</i>. Отметим,
+что бинарное отношение можно однозначно представить орграфом <i
+style='mso-bidi-font-style:normal'>G</i>(<i style='mso-bidi-font-style:normal'>X</i>,
+<i style='mso-bidi-font-style:normal'>E</i>). Теперь для произвольного
+отношения <i style='mso-bidi-font-style:normal'>Е</i> определим новое отношение
+<i style='mso-bidi-font-style:normal'>Е</i>* следующим образом<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>E</span></i><span
+style='font-size:12.0pt'>* = {(</span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>x</span></i><span
+style='font-size:12.0pt'>, </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>y</span></i><span
+style='font-size:12.0pt'>) | если в </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>G</span></i><span
+style='font-size:12.0pt'>(</span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>X</span></i><span
+style='font-size:12.0pt'>, </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>E</span></i><span
+style='font-size:12.0pt'>) существует путь ненулевой длины из <i
+style='mso-bidi-font-style:normal'>x</i> в </span><i style='mso-bidi-font-style:
+normal'><span lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>y</span></i><span
+style='font-size:12.0pt'>}.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><a name=zamikanie></a><span
+style='font-size:12.0pt'>Легко проверить, что <i style='mso-bidi-font-style:
+normal'>Е</i>* - транзитивное отношение. Кроме того, <i style='mso-bidi-font-style:
+normal'>Е</i>* является наименьшим транзитивным отношением на <i
+style='mso-bidi-font-style:normal'>Х</i> в том смысле, что для произвольного
+транзитивного отношения <i style='mso-bidi-font-style:normal'>F</i> </span><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Eacute;</span></span><span
+style='font-size:12.0pt'> <i style='mso-bidi-font-style:normal'>E</i> выполняется
+<i style='mso-bidi-font-style:normal'>E</i>* </span><span style='font-size:
+12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Eacute;</span></span><span
+style='font-size:12.0pt'> <i style='mso-bidi-font-style:normal'>F</i>. Отно­ше­ние
+<i style='mso-bidi-font-style:normal'>Е</i>* называется <b><span
+style='mso-bidi-font-style:italic'>транзитивным замыканием</span></b> отношения
+<i style='mso-bidi-font-style:normal'>Е</i>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Если
+отношение <i style='mso-bidi-font-style:normal'>Е</i> представить в виде графа </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>G</span></i><span style='font-size:12.0pt'>(</span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>X</span></i><span style='font-size:12.0pt'>, </span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>E</span></i><span style='font-size:12.0pt'>) в котором
+каждая дуга имеет вес 1, то транзитивное замыкание <i style='mso-bidi-font-style:
+normal'>Е</i>* можно вычислить с помощью алгоритма Флойда. При этом надо учесть,
+что<o:p></o:p></span></p>
+
+<p class=Fomula style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;
+margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'><span
+style='mso-tab-count:1'>                                                </span>(</span><i
+style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'>x<sub>i</sub></span></i><span style='font-size:12.0pt'>,
+</span><i style='mso-bidi-font-style:normal'><span lang=EN-US style='font-size:
+12.0pt;mso-ansi-language:EN-US'>x<sub>j</sub></span></i><span style='font-size:
+12.0pt'>) </span><span lang=EN-US style='font-size:12.0pt;font-family:Symbol;
+mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:"Times New Roman";
+mso-ansi-language:EN-US;mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Icirc;</span></span><span
+lang=EN-US style='font-size:12.0pt'> </span><i style='mso-bidi-font-style:normal'><span
+lang=EN-US style='font-size:12.0pt;mso-ansi-language:EN-US'>E</span></i><span
+style='font-size:12.0pt'>* если </span><span lang=EN-US style='font-size:12.0pt;
+mso-ansi-language:EN-US'><sub><!--[if gte vml 1]><v:shape id="_x0000_i1054"
+ type="#_x0000_t75" style='width:50.25pt;height:24pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./theme14_files/image056.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=67 height=32
+src="./theme14_files/image057.gif" v:shapes="_x0000_i1054"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1054"
+  DrawAspect="Content" ObjectID="_1106180366">
+ </o:OLEObject>
+</xml><![endif]--></span><span style='font-size:12.0pt'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Для
+большего удобства алгоритм Флойда в этом случае можно моди­фи­ци­ровать
+следующим образом.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Положим<o:p></o:p></span></p>
+
+<p class=Fomula style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;
+margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'><span
+style='mso-tab-count:1'>                                                </span><sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1055" type="#_x0000_t75" style='width:138.75pt;height:47.25pt'
+ o:ole="" fillcolor="window">
+ <v:imagedata src="./theme14_files/image058.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=185 height=63
+src="./theme14_files/image059.gif" v:shapes="_x0000_i1055"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1055"
+  DrawAspect="Content" ObjectID="_1106180367">
+ </o:OLEObject>
+</xml><![endif]-->.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Вместо
+(9.3) запишем<o:p></o:p></span></p>
+
+<p class=Fomula style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;
+margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'><span
+style='mso-tab-count:1'>                                            </span><sub><!--[if gte vml 1]><v:shape
+ id="_x0000_i1056" type="#_x0000_t75" style='width:162pt;height:24pt' o:ole=""
+ fillcolor="window">
+ <v:imagedata src="./theme14_files/image060.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=216 height=32
+src="./theme14_files/image061.gif" v:shapes="_x0000_i1056"><![endif]></sub><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1056"
+  DrawAspect="Content" ObjectID="_1106180368">
+ </o:OLEObject>
+</xml><![endif]-->,<o:p></o:p></span></p>
+
+<p class=Where style='margin-top:0cm;margin-right:30.0pt;margin-bottom:0cm;
+margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>где <span
+style='mso-tab-count:1'>             </span></span><span style='font-size:12.0pt;
+font-family:Symbol;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:Symbol'><span
+style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Uacute;</span></span><span
+style='font-size:12.0pt'> – дизъюнкция (логическое сложение),<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:36.0pt'><span
+style='font-size:12.0pt;font-family:Symbol;mso-ascii-font-family:"Times New Roman";
+mso-hansi-font-family:"Times New Roman";mso-char-type:symbol;mso-symbol-font-family:
+Symbol'><span style='mso-char-type:symbol;mso-symbol-font-family:Symbol'>&Ugrave;</span></span><span
+style='font-size:12.0pt'> – конъюнкция (логическое умножение).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>После
+завершения работы алгоритма будем иметь<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><sub><span style='font-size:12.0pt'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1057" type="#_x0000_t75" style='width:158.25pt;height:47.25pt'
+ o:ole="" fillcolor="window">
+ <v:imagedata src="./theme14_files/image062.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=211 height=63
+src="./theme14_files/image063.gif" v:shapes="_x0000_i1057"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1057"
+  DrawAspect="Content" ObjectID="_1106180369">
+ </o:OLEObject>
+</xml><![endif]--></span></sub><span style='font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:30.0pt;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt'><span style='font-size:12.0pt'>Модифицированный
+таким образом алгоритм называется алгоритмом Уоршелла.<o:p></o:p></span></p>
+
+<p class=Normal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+
+<div class=MsoNormal align=center style='text-align:center;text-indent:0cm'><span
+style='font-size:12.0pt'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+
+<h1 align=center style='margin-top:3.0pt;margin-bottom:12.0pt;text-align:center'>
+<span lang=EN-US style='font-size:12.0pt;mso-bidi-font-size:14.0pt;font-family:"Times New Roman";mso-ansi-language:
+EN-US;font-weight:normal;mso-bidi-font-weight:bold'>
+<a href="../theme13/theme13.htm">[<span lang=RU style='mso-ansi-language:RU'>предыдущая тема</span>]</a>
+<a href="../../theory.htm">[<span lang=RU style='mso-ansi-language:RU'>оглавление</span>]</a>
+<a href="../theme15/theme15.htm">[<span lang=RU style='mso-ansi-language:RU'>следующая тема</span>]</a>
+<o:p></o:p></span></h1>
+
+</div>
+
+</body>
+
+</html>
