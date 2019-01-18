@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/kvckr
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://kvckr.github.io
+  * I am kvckr (https://keybase.io/kvckr) on keybase.
+  * I have a public key ASDR7EhbqtQ844dqOjqR4vj3dUmJJNbc5XlJkyX1K3tHxQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120d1ec485baad43ce3876a3a3a91e2f8f775498924d6dce579499325f52b7b47c50a",
+      "host": "keybase.io",
+      "kid": "0120d1ec485baad43ce3876a3a3a91e2f8f775498924d6dce579499325f52b7b47c50a",
+      "uid": "c4d46420f0d8f829857b901a55481919",
+      "username": "kvckr"
+    },
+    "merkle_root": {
+      "ctime": 1547848517,
+      "hash": "e364d87a23a08a9c28a59685a1e7c7e4833161d778a5e1db2342d7bf1ffffd7e1f338cd6057651fa24db1946e06abbf69a482dbf14a2acc7fe8d310819e8053b",
+      "hash_meta": "69e66598dbc21cd9050184cf212f714afe580290cfb3e655bb802dd64b92fbc9",
+      "seqno": 4489769
+    },
+    "service": {
+      "entropy": "PIpFk2JuxENqQAY2rHz82x1M",
+      "hostname": "kvckr.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.13.1"
+  },
+  "ctime": 1547848529,
+  "expire_in": 504576000,
+  "prev": "5257b39650e10343d665ee98b2aff1f94f2b3e92d0f4a6aa8c6b66b13e2b97e1",
+  "seqno": 7,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg0exIW6rUPOOHajo6keL493VJiSTW3OV5SZMl9St7R8UKp3BheWxvYWTESpcCB8QgUlezllDhA0PWZe6Ysq/x+U8rPpLQ9KaqjGtmsT4rl+HEIJt/IaxiZXdOtxdHDZYzMV0vxhinrCkCWi+NdBGyjol/AgHCo3NpZ8RArT3/S8gDAs504S7HwHIXaJsnb/tkRd/GbO3UBAa2dp/2742IJszi3IWM98VTXVKKd1qxibuvrRv85gnPFNncAahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIFYtfd7GkA54nzrWu3VMhEkfxc1L+VO9m4WGiNIG8Pxno3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/kvckr
+
+==================================================================
