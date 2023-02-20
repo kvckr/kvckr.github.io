@@ -1,0 +1,1 @@
+const{moveMouse}=require("robotjs"),{contextBridge,ipcRenderer}=require("electron");contextBridge.exposeInMainWorld("moveMouse",((...e)=>moveMouse(...e))),contextBridge.exposeInMainWorld("onShortcut",(e=>{ipcRenderer.on("shortcut",((o,r)=>{e(r)}))}));

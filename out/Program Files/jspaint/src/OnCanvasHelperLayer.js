@@ -1,0 +1,1 @@
+class OnCanvasHelperLayer extends OnCanvasObject{constructor(s,e,a,t,n,i=1){super(s,e,a,t,n),this.$el.addClass("helper-layer"),this.$el.css({pointerEvents:"none"}),this.position(),this.canvas=make_canvas(this.width*i,this.height*i),this.$el.append(this.canvas)}}

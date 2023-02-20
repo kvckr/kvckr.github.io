@@ -1,0 +1,115 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[7078,2145,8258,2282],{8513:function(e,t,n){var r=n(5893),a=n(4393),i=n(2675),o=n(5152),s=n.n(o),c=n(7294);const l=s()((()=>n.e(6709).then(n.bind(n,6709))),{loadableGenerated:{webpack:()=>[6709]}});t.Z=e=>{let{id:t,useHook:n,StyledComponent:o,children:s}=e;const{processes:{[t]:{url:d=""}={}}}=(0,i.z)(),u=(0,c.useRef)(null),[m,w]=(0,c.useState)(!0),b=(0,c.useMemo)((()=>({contain:"strict",visibility:m?"hidden":"visible"})),[m]);return n(t,d,u,w,m),(0,r.jsxs)(r.Fragment,{children:[m&&(0,r.jsx)(l,{}),(0,r.jsx)(o,{ref:u,style:b,...(0,a.Z)({id:t}),children:s})]})}},7078:function(e,t,n){n.r(t),n.d(t,{default:function(){return J}});var r=n(5893),a=n(8513),i=n(4141),o=n(7489),s=n(8680),c=i.ZP.div.withConfig({componentId:"sc-552bf7eb-0"})`
+  height: 100%;
+  width: 100%;
+
+  .terminal {
+    backdrop-filter: blur(8px);
+    height: 100% !important;
+  }
+
+  .xterm-viewport {
+    ${(0,o.Z)(s.BQ)};
+
+    width: 100% !important;
+  }
+`,l=n(3989);const d={allowTransparency:!0,cols:70,cursorBlink:!0,cursorStyle:"underline",cursorWidth:8,fontFamily:"Consolas, Lucida Console, Courier New, monospace",fontSize:14,fontWeight:"100",letterSpacing:.5,rows:20,theme:{background:l.Z.Terminal.backgroundColor,foreground:"rgb(204, 204, 204)"}},u=["     ':lodxkkkOOOOOOOOOOOOkkkkkl","  .ckKNWMMMMMMMMMMMMMMMMMMMMMMMO"," .kWNK0OOKWMX0OOOOO0NMMMN000000d",".dKo,.   cNWo      .xMMWo       ",":x'      cWN:      .kMMWc       ","..       dMK,      '0MMX;       ","        .OMO.      ;XMM0,       ","        cNMx.      cNMMk.       ","       .OMMd       oMMMx.       ","      .xWMWc      .xMMMd        ","     .xWMMX;      .kMMMd        ","    'OWMMMO.      '0MMMO.     :o","   cKMMMMWo       '0MMMWk;..'l0c","  ;XMMMMM0,        oWMMMMWXXNNd.","  .kWMMW0;         .l0WMMMMNO:  ","   .lkkl.            .cxkkd:.   "];var m=n(1127),w=n(2858);let b;var p=async(e,t)=>{const{fetchCommandFromWAPM:r}=await Promise.all([n.e(4370),n.e(9539)]).then(n.bind(n,4124)),{lowerI64Imports:a}=await n.e(4512).then(n.bind(n,4359)),{default:i}=await n.e(7545).then(n.t.bind(n,7545,23));try{const o=await r({args:e});if(o.length<1024&&(new TextDecoder).decode(o).includes("NoSuchKey"))throw new Error(`command not found ${e[0]}`);const s=await a(o);if(void 0!==s&&s instanceof Uint8Array){b||=(await n.e(8778).then(n.t.bind(n,8778,23))).default;const r=await WebAssembly.compile(s),a=new i({args:e,bindings:b,env:{COLUMNS:d.cols?.toString(),LINES:d.rows?.toString()},sendStderr:e=>t?.print(e.toString()),sendStdout:e=>t?.print(e.toString())}),o=await WebAssembly.instantiate(r,a.getImports(r));a.start(o)}}catch(e){const{message:n}=e;t?.println(n)}},f=n(2794),g=n(9595);const h={fullStdLib:!1,indexURL:"/Program Files/Pyodide/"},k=async(e,t)=>{if(await(0,g.mb)(["/Program Files/Pyodide/pyodide.js"]),!window.pyodide&&window.loadPyodide&&(window.pyodide=await window.loadPyodide(h)),window.pyodide){const n="ver"===e||"version"===e;try{let r=await window.pyodide.runPythonAsync(n?"import sys\r\nsys.version\r\n":"import sys\r\nimport io\r\nsys.stdout = io.StringIO()\r\n"+e);r||(r=await window.pyodide.runPythonAsync("sys.stdout.getvalue()")),r&&t?.println(r.toString())}catch(e){const{message:n}=e;n&&t?.println(n)}}};var A=n(4668),y=n(9893),M=n(5620),$=n(3564),v=n(2675),x=n(1816),S=n(1864),F=n(7294),O=n(2145),E=n(8258),j=n(3201),N=n(9835),P=n(2282),C=n(8764).Buffer;const W="The system does not support the command.",R="The system cannot find the file specified.",T="The system cannot find the path specified.",L="The syntax of the command is incorrect.",{alias:B}=s.Ou;var U=(e,t,r,a)=>{const{createPath:o,deletePath:c,exists:b,fs:h,lstat:U,mapFs:z,mkdirRecursive:I,readdir:D,readFile:K,rename:Z,rootFs:X,stat:G,updateFolder:J}=(0,M.o)(),{closeWithTransition:V,open:H,title:Y}=(0,v.z)(),q=(0,x.R)(),{name:ee}=(0,i.Fg)(),te=(0,F.useCallback)((async(e,n)=>{if(!e)return"";if(e.startsWith("ipfs://")){const t=await(0,j.getIpfsResource)(e),r=(0,S.join)(s.Ll,await o(await(0,j.getIpfsFileName)(e,t),n||s.Ll,t));return J(n||s.Ll,(0,S.basename)(r)),r}return(0,S.isAbsolute)(e)?e:(0,S.join)(t.current,e)}),[t,o,J]),ne=(0,F.useRef)([]),re=(0,F.useCallback)((function(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1];const n=(0,S.dirname)(e);t?J(n,void 0,(0,S.basename)(e)):J(n,(0,S.basename)(e))}),[J]),ae=(0,F.useCallback)((async function(){let i=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"";const[M="",...v]=(0,m.$4)(i),x=M.toLowerCase();switch(x){case"cat":case"type":{const[e]=v;if(e){const t=await te(e);await b(t)?(await U(t)).isDirectory()?a?.println("Access is denied."):a?.println((await K(t)).toString()):a?.println(T)}else a?.println(L);break}case"cd":case"cd/":case"cd.":case"cd..":case"chdir":case"pwd":{const[e]=x.startsWith("cd")&&x.length>2?[x.slice(2)]:v;if(e&&"pwd"!==x){const n=await te(e);await b(n)?(await U(n)).isDirectory()?t.current!==n&&a&&(t.current=n):a?.println("The directory name is invalid."):a?.println(T)}else a?.println(t.current);break}case"color":{const[e,t,n]=v;if(void 0!==e&&void 0!==t&&void 0!==n)a?.print((0,w.P)(Number(e),Number(t),Number(n)));else{const[[e,t]=[]]=v,{rgb:n,name:r}=w.w[e?.toUpperCase()]||{},{rgb:i,name:o}=w.w[t?.toUpperCase()]||{};if(n){const e=Boolean(i),t=(0,w.P)(...n,e);a?.print(t),a?.println(`${e?"Background":"Foreground"}: ${r}`),ne.current[0]=t}if(i){const e=(0,w.P)(...i);a?.print(e),a?.println(`Foreground: ${o}`),ne.current[1]=e}i||n||(a?.print("[0m"),ne.current=[])}break}case"copy":case"cp":{const[e,t]=v,n=await te(e);if(await b(n))if(t){const e=await te(t),r=(0,S.dirname)(e);re((0,S.join)(r,await o((0,S.basename)(e),r,await K(n)))),a?.println("\t1 file(s) copied.")}else a?.println("The file cannot be copied onto itself."),a?.println("\t0 file(s) copied.");else a?.println(R);break}case"clear":case"cls":r?.reset(),r?.write(`c${ne.current.join("")}`);break;case"date":a?.println(`The current date is: ${(0,g.BU)().slice(0,10)}`);break;case"del":case"erase":case"rd":case"rm":case"rmdir":{const[e]=v;if(e){const t=await te(e);await b(t)&&(await c(t),re(t,!0))}break}case"dir":case"ls":{const[e=""]=v,n=async t=>{let n=0,i=0,o=0,c=await D(t);0===c.length&&"FileSystemAccess"===X?.mntMap[t]?.getName()&&(await(0,$.ZK)(t),c=await D(t));const l=new Intl.DateTimeFormat(s.ZW,{timeStyle:"short"}),d=await Promise.all(c.filter((t=>(!e.startsWith("*")||t.endsWith(e.slice(1)))&&(!e.endsWith("*")||t.startsWith(e.slice(0,-1))))).map((async e=>{const r=(0,S.join)(t,e),a=await G(r),s=new Date((0,y.GA)(r,a)),c=s.toISOString().slice(0,10),d=l.format(s).padStart(8,"0"),u=a.isDirectory();return n+=u?0:a.size,u?o+=1:i+=1,[`${c}  ${d}`,u?"<DIR>        ":a.size.toLocaleString(),e]})));a?.println(` Directory of ${t}`),a?.println("");const u=!a?._termSize?.cols||a?._termSize?.cols>52;(0,m.j5)([["Date",u?22:20],["Type/Size",u?15:13,!0,e=>"-1"===e?"":e],["Name",r?.cols?r.cols-40:30]],d,a,!0),a?.println(`\t\t${i} File(s)\t${n.toLocaleString()} bytes`),a?.println(`\t\t${o} Dir(s)${await(0,m.lO)()}`)};if(!e||e.startsWith("*")||e.endsWith("*"))await n(t.current);else{const t=await te(e);await b(t)?(await U(t)).isDirectory()?await n(t):a?.println((0,S.basename)(t)):a?.println("File Not Found")}break}case"echo":a?.println(i.slice(i.indexOf(" ")+1));break;case"exit":case"quit":V(e);break;case"file":{const[e]=v;if(e){const t=await te(e);if(await b(t)){const{fileTypeFromBuffer:r}=await Promise.all([n.e(8090),n.e(3545),n.e(9320)]).then(n.bind(n,3545)),{mime:i="Unknown"}=await r(await K(t))||{};a?.println(`${e}: ${i}`)}}break}case"find":case"search":(await(0,N.Kk)(v.join(" "),K,X))?.forEach((e=>{let{ref:t}=e;return a?.println(t)}));break;case"ffmpeg":case"imagemagick":{const[e,t]=v;if(e&&t){const n=await te(e);if(await b(n)&&!(await U(n)).isDirectory()){const e="ffmpeg"===x?O.transcode:E.convert,[[r,i]]=await e([[(0,S.basename)(n),await K(n)]],t,a);if(r&&i){const e=(0,S.dirname)(n);re((0,S.join)(e,await o(r,e,i)))}}else a?.println(R)}else a?.println(L);break}case"git":case"isogit":h&&a&&await(0,f.Z)(v,t.current,a,h,J);break;case"help":{const[e]=v;if(a){const t="-a"===e;if(e&&!t){const t=m.CN[e]?e:Object.entries(m.j3).find((t=>{let[,[n]]=t;return n===e}))?.[0];t&&m.CN[t]?a.println(m.CN[t]):a.println("This command is not supported by the help utility.")}else(0,m.R_)(a,m.CN,t?m.j3:void 0)}break}case"history":a?.history.entries.forEach(((e,t)=>a.println(`${(t+1).toString().padStart(4)} ${e}`)));break;case"ipfs":{const[e,n]=v;"get"===e&&n&&await te(`ipfs://${n}`,t.current);break}case"ifconfig":case"ipconfig":case"whatsmyip":{const e=await(await fetch("https://cloudflare.com/cdn-cgi/trace")).text()||"",{ip:t=""}=Object.fromEntries(e.trim().split("\n").map((e=>e.split("=")))||[]),n=e=>{const t=e.split(".");return 4===t.length&&t.map(Number).every((e=>e>0&&e<256))};a?.println("IP Configuration"),a?.println(""),a?.println(`   IPv4 Address. . . . . . . . . . . : ${n(t)?t:"Unknown"}`);break}case"kill":case"taskkill":{const[e]=v;q.current[e]?(V(e),a?.println(`SUCCESS: Sent termination signal to the process "${e}".`)):a?.println(`ERROR: The process "${e}" not found.`);break}case"license":a?.println(_);break;case"md":case"mkdir":{const[e]=v;if(e){const t=await te(e);await I(t),re(t)}break}case"mount":if(a)if((0,s.A)())try{const e=await z(t.current);if(e){const n=(0,S.join)(t.current,e);J(t.current,e),t.current=n}}catch{}else a?.println(W);break;case"move":case"mv":case"ren":case"rename":{const[e,t]=v,n=await te(e);if(await b(n))if(t){let e=await te(t);["move","mv"].includes(x)&&(await G(e)).isDirectory()&&(e=(0,S.join)(e,(0,S.basename)(n))),await Z(n,e),re(n,!0),re(e)}else a?.println(L);else a?.println(R);break}case"neofetch":case"systeminfo":{await(0,g.mb)(["/Program Files/Xterm.js/ua-parser.js"]);const{browser:e,cpu:t,engine:n,gpu:i,os:o}=(new window.UAParser).getResult()||{},{cols:s,options:c}=r||{},b=`public@${window.location.hostname}`,p=(c?.fontFamily||d.fontFamily)?.split(", ").find((e=>document.fonts.check(`${c?.fontSize||d.fontSize||12}px ${e}`))),{quota:f=0,usage:h=0}=await(navigator.storage?.estimate?.())||{},k=3,A=e=>`${(0,w.P)(...w.w[k].rgb)}${e}${ne.current?.[0]||(0,w.P)(...w.w[7].rgb)}`,y=[b,Array.from({length:b.length}).fill("-").join(""),`OS: ${B} ${Q()}`];o?.name&&y.push(`Host: ${o.name}${o?.version?` ${o.version}`:""}${t?.architecture?` ${t?.architecture}`:""}`),e?.name&&y.push(`Kernel: ${e.name}${e?.version?` ${e.version}`:""}${n?.name?` (${n.name})`:""}`),y.push(`Uptime: ${(0,m.hR)(!0)}`,`Packages: ${Object.keys(l.Z).length}`,`Resolution: ${window.screen.width}x${window.screen.height}`,`Theme: ${ee}`),p&&y.push(`Terminal Font: ${p}`),i?.vendor?y.push(`GPU: ${i.vendor}${i?.model?` ${i.model}`:""}`):i?.model&&y.push(`GPU: ${i.model}`),window.performance&&"memory"in window.performance&&y.push(`Memory: ${(window.performance.memory.totalJSHeapSize/1024/1024).toFixed(0)}MB / ${(window.performance.memory.jsHeapSizeLimit/1024/1024).toFixed(0)}MB`),f&&y.push(`Disk (/): ${(h/1024/1024/1024).toFixed(0)}G / ${(f/1024/1024/1024).toFixed(0)}G (${(h/f*100).toFixed(2)}%)`);const M=y.reduce(((e,t)=>Math.max(e,t.length)),0),$=s||d.cols||70;if(a){const e=u[0].length+M,t=Math.max(Math.min($-e,3),1);y.push("\n",[0,4,2,6,1,5,3,7].map((e=>(0,m.vR)(e,ne.current))).join(""),[8,"C","A","E",9,"D","B","F"].map((e=>(0,m.vR)(e,ne.current))).join("")),u.forEach(((e,n)=>{let r=y[n]||"";if(0===n){const[e,t]=r.split("@");r=`${A(e)}@${A(t)}`}else{const[e,t]=r.split(":");t&&(r=`${A(e)}:${t}`)}a.println(`${A(e)}${r.padStart(r.length+t," ")||""}`)}))}break}case"sheep":case"esheep":{const{default:e}=await n.e(1791).then(n.bind(n,1791));let[t=1,r=0]=v;if(!Number.isNaN(t)&&!Number.isNaN(r)){t=Number(t),r=Number(r),t>1&&(await e(),t-=1);const n=(r||(t>1?1:0))*s.i2;Array.from({length:t}).fill(0).map((()=>Math.floor(Math.random()*n))).forEach((t=>setTimeout(e,t)))}break}case"ps":case"tasklist":(0,m.j5)([["PID",30],["Title",25]],Object.entries(q.current).map((e=>{let[t,{title:n}]=e;return[t,n]})),a);break;case"py":case"python":if(a){const[e]=v,t=await te(e);if(await b(t)){const e=await K(t);await k(e.toString(),a)}else await k(i.slice(i.indexOf(" ")+1),a)}break;case"logout":case"restart":case"shutdown":(0,$.zE)(X).finally((()=>window.location.reload()));break;case"time":a?.println(`The current time is: ${(0,g.BU)().slice(11,22)}`);break;case"title":Y(e,i.slice(i.indexOf(" ")+1));break;case"touch":{const[e]=v;if(e){const t=await te(e),n=(0,S.dirname)(t);re((0,S.join)(n,await o((0,S.basename)(t),n,C.from(""))))}break}case"uptime":a?.println(`Uptime: ${(0,m.hR)()}`);break;case"ver":case"version":a?.println(Q());break;case"wapm":case"wax":a&&await p(v,a);break;case"weather":case"wttr":{const e=await fetch("https://wttr.in/?1nAF",s.P8);a?.println(await e.text());const[t,n]=ne.current;t&&a?.print(t),n&&a?.print(n);break}case"whoami":a?.println(`${window.location.hostname}\\public`);break;case"xlsx":{const[e,t="xlsx"]=v;if(e&&t){const n=await te(e);if(await b(n)&&!(await U(n)).isDirectory()){const r=await(0,P.convertSheet)(await K(n),t),a=(0,S.dirname)(n);re((0,S.join)(a,await o(`${(0,S.basename)(e,(0,S.extname)(e))}.${t}`,a,C.from(r))))}else a?.println(R)}else a?.println(L);break}default:if(M){const e=Object.keys(l.Z).find((e=>e.toLowerCase()===x));if(e){const[t]=v,n=await te(t);H(e,{url:t&&n&&await b(n)?n:""})}else if(await b(M)){const e=(0,S.extname)(M).toLowerCase(),{command:t=""}=A.Z[e]||{};if(t)await ae(`${t} ${M}`);else{let t="",n=M;e===s.zm?({pid:t,url:n}=(0,y.OE)(await K(M))):t=(0,y.Wd)(e),t&&H(t,{url:n})}}else a?.println((0,m.xy)(M))}}return a&&D(t.current).then((e=>(0,m.JF)(e,a))),t.current}),[t,Y,V,o,c,b,h,te,e,a,U,z,I,H,q,K,D,Z,X,G,r,ee,re,J]),ie=(0,F.useRef)(ae);return(0,F.useEffect)((()=>{ie.current=ae}),[ae]),ie},z=n(6819),I=n(9121);const{alias:D,author:K,license:Z,version:X}=s.Ou,_=`${Z} License`,Q=()=>{const{__NEXT_DATA__:{buildId:e}={}}=window;return`${X}${e?`-${e}`:""}`};var G=(e,t,n,r,a)=>{const{url:i,processes:{[e]:{closing:o=!1,libs:c=[]}={}}}=(0,v.z)(),l=(0,F.useRef)(t||s.Sd),{readdir:u}=(0,M.o)(),[w,b]=(0,F.useState)(),[p,f]=(0,F.useState)(),[h,k]=(0,F.useState)(),[y,$]=(0,F.useState)(""),[x,O]=(0,F.useState)(!1),E=U(e,l,w,h),j=(0,F.useCallback)((()=>p?.fit()),[p]),{foregroundId:N}=(0,z.k)();(0,F.useEffect)((()=>{if(t){if(h)h.handleCursorInsert(t.includes(" ")?`"${t}"`:t);else{const e=(0,S.extname)(t).toLowerCase(),{command:n=""}=A.Z[e]||{};n&&$(`${n} ${t}`)}i(e,"")}}),[e,h,i,t]),(0,F.useEffect)((()=>{(0,g.mb)(c).then((()=>{window.Terminal&&b(new window.Terminal(d))}))}),[c]),(0,F.useEffect)((()=>{if(w&&a&&n.current&&window.FitAddon&&window.LocalEchoController){const e=new window.FitAddon.FitAddon,t=new window.LocalEchoController(void 0,{historySize:1e3});w.loadAddon(t),w.loadAddon(e),w.open(n.current),e.fit(),f(e),k(t),n.current.addEventListener("contextmenu",(e=>{(0,g.nK)(e);const n=w.getSelection();n?(navigator.clipboard?.writeText(n),w.clearSelection()):navigator.clipboard?.readText?.().then((e=>t.handleCursorInsert(e)))})),n.current?.closest("section")?.addEventListener("focus",(()=>w?.textarea?.focus(s.eS)),{passive:!0}),r(!1),(0,g.vU)()&&(w.options.letterSpacing=0)}return()=>{w&&o&&w.dispose()}}),[o,n,a,r,w]),(0,F.useEffect)((()=>{let e;return w&&h&&(w.textarea?.setAttribute("enterkeyhint","send"),e=w.onKey((e=>{let{domEvent:{ctrlKey:t,code:n}}=e;t&&"KeyV"===n&&navigator.clipboard?.readText?.().then((e=>h.handleCursorInsert(e)))}))),()=>e?.dispose()}),[h,w]),(0,F.useEffect)((()=>{if(h&&w&&!x){const e=()=>h.read(`\r\n${l.current}>`).then((t=>E.current?.(t).then(e)));h.println(`${D} [Version ${Q()}]`),h.println(`By ${K.name}. ${_}.`),y?(h.println(`\r\n${l.current}>${y}\r\n`),h.history.entries=[y],E.current(y).then(e)):e(),O(!0),w.focus(),j(),u(l.current).then((e=>(0,m.JF)(e,h)))}}),[j,y,h,E,x,u,w]),(0,F.useLayoutEffect)((()=>{e!==N||a||w?.textarea?.focus(s.eS)}),[N,e,a,w]),(0,I.Z)(n.current,j)},J=e=>{let{id:t}=e;return(0,r.jsx)(a.Z,{StyledComponent:c,id:t,useHook:G})}},9121:function(e,t,n){var r=n(7294);t.Z=(e,t)=>{const[n,a]=(0,r.useState)();(0,r.useEffect)((()=>{t&&a(new ResizeObserver(t))}),[t]),(0,r.useEffect)((()=>(e instanceof HTMLElement&&n?.observe(e),()=>{e instanceof HTMLElement&&n?.unobserve(e)})),[e,n])}},7489:function(e,t,n){n.d(t,{Z:function(){return c}});var r=n(4141);const a="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAKElEQVR42mOgMRgF6enp/ynSDMMUaEZgsjST5RJsikk2AKc4bcAoAADI7y5FsB5j/QAAAABJRU5ErkJggg==",i="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAK0lEQVR42mOgARgF6enp/0kRZ8KvGMEnyQUwjMwn0xBMzWQZQlmA0h6MAgAuqCnfdOk/ZQAAAABJRU5ErkJggg==",o="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAG0lEQVR42mPAD0ZBenr6fxge4ppHuiGEwSgAAGJiLkXUVlYDAAAAAElFTkSuQmCC",s="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAG0lEQVR42mPADkZBenr6fxgeZoYMV82Ug1EAAPiTLkWjutmQAAAAAElFTkSuQmCC";var c=function(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:0,n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:0;return r.iv`
+  overflow: auto;
+  scrollbar-color: rgb(77, 77, 77) rgb(23, 23, 23);
+  scrollbar-gutter: stable;
+
+  &::-webkit-scrollbar {
+    height: ${e}px;
+    width: ${e}px;
+  }
+
+  &::-webkit-scrollbar-corner,
+  &::-webkit-scrollbar-track {
+    background-color: rgb(23, 23, 23);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    background-color: rgb(77, 77, 77);
+  }
+
+  &::-webkit-scrollbar-thumb:vertical {
+    background-clip: padding-box;
+    background-color: rgb(77, 77, 77);
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(122, 122, 122);
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: rgb(166, 166, 166);
+  }
+
+  &::-webkit-scrollbar-button:single-button {
+    background-clip: padding-box;
+    background-color: rgb(23, 23, 23);
+    background-position: center 4px;
+    background-repeat: no-repeat;
+    background-size: 10px;
+    border: 1px solid rgb(23, 23, 23);
+    display: block;
+    height: ${e?`${e}px`:"initial"};
+
+    &:hover {
+      background-color: rgb(55, 55, 55);
+    }
+
+    &:active {
+      background-color: rgb(166, 166, 166);
+    }
+  }
+
+  &::-webkit-scrollbar-button:single-button:vertical:decrement,
+  &::-webkit-scrollbar-button:single-button:vertical:increment {
+    background-position-x: ${0===t?"center":`${t}px`};
+    background-position-y: ${0===n?"center":`${n}px`};
+    background-size: 16px;
+    border-bottom: 0;
+    border-top: 0;
+    image-rendering: pixelated;
+  }
+
+  &::-webkit-scrollbar-button:single-button:vertical:decrement {
+    background-image: url(${a});
+  }
+
+  &::-webkit-scrollbar-button:single-button:vertical:increment {
+    background-image: url(${i});
+  }
+
+  &::-webkit-scrollbar-button:single-button:horizontal:decrement,
+  &::-webkit-scrollbar-button:single-button:horizontal:increment {
+    background-position: center;
+    background-size: 16px;
+    border-left: 0;
+    border-right: 0;
+    image-rendering: pixelated;
+  }
+
+  &::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    background-image: url(${o});
+  }
+
+  &::-webkit-scrollbar-button:single-button:horizontal:increment {
+    background-image: url(${s});
+  }
+
+  &::-webkit-scrollbar-button:single-button:vertical:decrement:active,
+  &::-webkit-scrollbar-button:single-button:vertical:increment:active,
+  &::-webkit-scrollbar-button:single-button:horizontal:decrement:active,
+  &::-webkit-scrollbar-button:single-button:horizontal:increment:active {
+    background-blend-mode: color-burn;
+  }
+`}},2145:function(e,t,n){n.r(t),n.d(t,{transcode:function(){return o}});var r=n(1864),a=n(9595),i=n(8764).Buffer;const o=async(e,t,n)=>{const o=await(async e=>(window.FFmpeg||await(0,a.mb)(["/Program Files/ffmpeg/ffmpeg.min.js"]),window.FFmpeg&&(window.FFmpegInstance?.exit(),window.FFmpegInstance=window.FFmpeg.createFFmpeg({corePath:`${window.location.origin}/Program Files/ffmpeg/ffmpeg-core.js`,log:!0,logger:t=>{let{message:n}=t;e?.println(n)},mainName:"main"}),await window.FFmpegInstance.load()),window.FFmpegInstance))(n),s=[];return await Promise.all(e.map((async e=>{let[n,a]=e;const c=(0,r.basename)(n),l=`${(0,r.basename)(n,(0,r.extname)(n))}.${t}`;o.FS("writeFile",c,a),await o.run("-i",c,l),s.push([(0,r.join)((0,r.dirname)(n),l),i.from(o.FS("readFile",l))])}))),s}},8258:function(e,t,n){n.r(t),n.d(t,{convert:function(){return o}});var r=n(1864),a=n(9595),i=n(8764).Buffer;const o=async(e,t,n)=>{const o=[];await(0,a.mb)(["/Program Files/imagemagick/wasm-imagemagick.umd-es5.min.js"]);const{call:s}=window["wasm-imagemagick"];return await Promise.all(e.map((async e=>{let[a,c]=e;const l=(0,r.basename)(a),d=`${(0,r.basename)(a,(0,r.extname)(a))}.${t}`,{outputFiles:[u]=[],stderr:m,stdout:w}=await s([{content:c,name:l}],["convert",l,"-verbose",d]),b=[...w,...m].join("\n");b&&n?.println(b),o.push([(0,r.join)((0,r.dirname)(a),d),u?.blob?i.from(await u.blob.arrayBuffer()):i.from("")])}))),o}},9835:function(e,t,n){n.d(t,{O9:function(){return l},Kk:function(){return w},Rx:function(){return b}});var r=n(5620),a=n(1864),i=n(7294),o=JSON.parse('{"I":[".cache",".json",".url"],"K":[".md",".txt",".whtml"]}'),s=n(8680),c=n(9595);const l=["/System/lunr/lunr.min.js"];let d=Object.create(null);const u=async(e,t)=>{if(window.lunr||await(0,c.mb)(l),!t&&!d.search){const e=await fetch("/.index/search.lunr.json",s.P8);try{d=window.lunr?.Index.load(JSON.parse(await e.text()))}catch{}}const n=t??d;let r=[];try{r=n.search?.(e),0===r?.length&&(r=n.search?.(`${e}*`))}catch{}return r??[]},m=async(e,t)=>{const n=t?._getFs("/")?.fs,r=n?.getOverlayedFileSystems(),i=r?.writable,s=Object.keys(i?._cache?.map??{}).filter((e=>{const t=(0,a.extname)(e);return Boolean(t)&&!o.I.includes(t)})),c=await Promise.all(s.map((async t=>{const n=(0,a.extname)(t);return{name:(0,a.basename)(t,n),path:t,text:o.K.includes(n)?(await e(t)).toString():void 0}}))),l=window.lunr?.((function(){this.ref("path"),this.field("name"),this.field("text"),c.forEach((e=>this.add(e)))}));return window.lunr?.Index.load(l.toJSON())},w=async(e,t,n)=>{const r=await u(e),a=await m(t,n);return[...r,...await u(e,a)].sort(((e,t)=>t.score-e.score))},b=e=>{const[t,n]=(0,i.useState)([]),{readFile:a,rootFs:o}=(0,r.o)();return(0,i.useEffect)((()=>{(async()=>{e.length>0?(window.lunr||await(0,c.mb)(l),u(e).then(n),m(a,o).then((t=>u(e,t).then((e=>n((t=>[...t,...e].sort(((e,t)=>t.score-e.score))))))))):n([])})()}),[a,o,e]),t}},2282:function(e,t,n){n.r(t),n.d(t,{convertSheet:function(){return i}});var r=n(9595),a=n(8764).Buffer;const i=async(e,t)=>{const n=await(async()=>(window.XLSX||await(0,r.mb)(["/Program Files/SheetJS/xlsx.full.min.js"]),window.XLSX))();let i;if("numbers"===t){if(await(0,r.mb)(["/Program Files/SheetJS/xlsx.zahl.js"]),!window.XLSX_ZAHL_PAYLOAD)return a.from("");i=window.XLSX_ZAHL_PAYLOAD}return n.write(n.read(e),{bookType:t,numbers:i,type:"buffer"})}}}]);

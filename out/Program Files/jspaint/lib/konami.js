@@ -1,0 +1,1 @@
+var Konami={code:function(e){return function(e,n){var o=0;return function(r){var t=r.keyCode===e[o];t||(o=0,t=r.keyCode===e[o]),t&&(o+=1,66!==r.keyCode&&65!==r.keyCode||r.preventDefault(),o===e.length&&(o=0,n()))}}([38,38,40,40,37,39,37,39,66,65],e)}};
