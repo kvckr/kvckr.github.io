@@ -943,11 +943,10 @@
 
             if (!playlist.length) return Lampa.Noty.show(Lampa.Lang.translate('kinopub_nolinks'));
 
-            var first = playlist[start];
-
-            if (playlist.length > 1) first.playlist = playlist;
-
-            Lampa.Player.play(first);
+            // Плейлист передается только через Player.playlist: встраивание его в
+            // сам элемент (first.playlist) создает циклическую структуру, на которой
+            // падает JSON.stringify при запуске внешнего плеера (Infuse и др.)
+            Lampa.Player.play(playlist[start]);
 
             if (playlist.length > 1) Lampa.Player.playlist(playlist);
         };
@@ -1236,7 +1235,7 @@
     function startPlugin() {
         Lampa.Manifest.plugins = {
             type: 'video',
-            version: '1.0.0',
+            version: '1.0.1',
             name: 'KinoPub',
             description: 'Просмотр фильмов и сериалов с kino.pub',
             component: 'kinopub'
